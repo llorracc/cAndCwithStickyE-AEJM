@@ -1,0 +1,33 @@
+ \input{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/econtexPaths}\documentclass{\econtex}\usepackage{\econtexSetup}\usepackage{\econtexShortcuts}\input{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Switches.tex}\newcommand{\texname}{Tables}
+
+\usepackage[nolists,nomarkers,tablesonly]{endfloat}
+
+% This brings in several tables, which need to know that they are not being executed in StandAlone mode
+% StandAloneOff.command makes the necessary changes so that the same file will compile standalone or as an input
+% The boolean variable is used to make adjustments within the file depending on which mode it is compiling in
+\immediate\write18{/Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/StandAloneOff.command}
+\provideboolean{StandAlone}
+\setboolean{StandAlone}{false}
+% The tables below need \TableWidth to have been defined 
+
+\newlength\TableWidth
+
+
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcommand{\YLevBF}{\ensuremath{\textbf{Y}}}
+
+\begin{document}\bibliographystyle{\econtexBibStyle}
+
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/Calibration.tex
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/Eqbm.tex
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/CampManVsStickyE.tex
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/CGrowCross.tex % Defines \CGrowCross command used in CGrowCross table
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/CGrowCross.tex
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/SOEmrkvSimReg.tex
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/DSGEmrkvSimReg.tex
+\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/RepAgentMrkvSimReg.tex
+
+\bibliography{economics,\texname,\texname-Add}
+
+
+\end{document}

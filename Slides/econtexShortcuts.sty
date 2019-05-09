@@ -1,0 +1,629 @@
+\newcommand{\aAgg}{\ensuremath{\mathsf{A}}}
+\newcommand{\aboveMin}{\blacktriangle}
+\newcommand{\adjPar}{\ensuremath{\omega}}
+\newcommand{\adj}{\ensuremath{\mathrm{j}}}
+\newcommand{\aE}{\aRat^{e}}
+\newcommand{\aFunc}{\ensuremath{\mathrm{a}}}
+\newcommand{\Age}{\ensuremath{Z}}
+\newcommand{\age}{\ensuremath{z}}
+\newcommand{\ALevBF}{\ensuremath{\mathbf{A}}}
+\newcommand{\aLevBF}{\ensuremath{\mathbf{a}}}
+\newcommand{\ALev}{\ensuremath{A}}
+\newcommand{\aLev}{\ensuremath{a}}
+\newcommand{\Alive}{\ensuremath{\cancel{\mathfrak{D}}}}
+\newcommand{\Alt}{\grave}
+\newcommand{\aMin}{\ensuremath{\underline{\aRat}}}
+\newcommand{\ARat}{\ensuremath{A}}
+\newcommand{\aRat}{\ensuremath{a}}
+\newcommand{\ASS}{\ensuremath{\ensuremath{A}}}
+\newcommand{\aSS}{\ensuremath{\ensuremath{a}}}
+\newcommand{\ATarg}{\ensuremath{\check{A}}}
+\newcommand{\aTarg}{\ensuremath{\check{a}}}
+\newcommand{\BE}{\BRat^{e}}
+\newcommand{\bE}{\bRat^{e}}
+\newcommand{\BLevBF}{\ensuremath{\mathbf{B}}}
+\newcommand{\bLevBF}{\ensuremath{\mathbf{b}}}
+\newcommand{\BLevE}{\ensuremath{\BLev^{e}}}
+\newcommand{\bLevE}{\ensuremath{\bLev^{e}}}
+\newcommand{\BLevU}{\ensuremath{\BLev^{u}}}
+\newcommand{\bLevU}{\ensuremath{\bLev^{u}}}
+\newcommand{\BLev}{\ensuremath{B}}
+\newcommand{\bLev}{\ensuremath{b}}
+\newcommand{\bMin}{\ensuremath{\underline{\bRat}}}
+\newcommand{\bRatE}{\ensuremath{b}^{e}}
+\newcommand{\BRatE}{\ensuremath{B}^{e}}
+\newcommand{\bRatU}{\ensuremath{b}^{u}}
+\newcommand{\BRat}{\ensuremath{B}}
+\newcommand{\bRat}{\ensuremath{b}}
+\newcommand{\bTargE}{\ensuremath{\check{b}^{e}}}
+\newcommand{\BTargTarg}{\Target{\Target{\BRat}}}
+\newcommand{\bTargTarg}{\Target{\Target{\bRat}}}
+\newcommand{\BTarg}{\ensuremath{\check{B}}}
+\newcommand{\bTarg}{\ensuremath{\check{b}}}
+\newcommand{\BU}{{B}^{u}}
+\newcommand{\bU}{{b}^{u}}
+\newcommand{\cAgg}{\ensuremath{\pmb{C}}}
+\newcommand{\CARA}{\ensuremath{\alpha}}
+\newcommand{\ccRat}{\ensuremath{\mathsf{c}}}
+\newcommand{\CDF}{\ensuremath{\mathcal{F}}}
+\newcommand{\CEndFunc}{\ensuremath{\mathfrak{C}}}
+\newcommand{\cEndFunc}{\ensuremath{\mathfrak{c}}}
+\newcommand{\cEss}{{c}^{e}}
+\newcommand{\CE}{\CRat^{e}}
+\newcommand{\cE}{\cRat^{e}}
+\newcommand{\cFuncAbove}{\ensuremath{\bar{\mathrm{c}}}}
+\newcommand{\cFuncBelow}{\ensuremath{\uline{\mathrm{c}}}}
+\newcommand{\cFuncMax}{\ensuremath{\bar{\bar{\mathrm{c}}}}}
+\newcommand{\CFunc}{\ensuremath{\mathrm{C}}}
+\newcommand{\cFunc}{\ensuremath{\mathrm{c}}}
+\newcommand{\cFunc}{\ensuremath{\mathrm{c}}}
+\newcommand{\CGroOverG}{\ensuremath{\Upsilon}}
+\newcommand{\CGroOverR}{\ensuremath{\Phi}}
+\newcommand{\CGroPF}{\ensuremath{\Lambda}}
+\newcommand{\cGroPF}{\ensuremath{\lambda}}
+\newcommand{\CGroPS}{\ensuremath{\chi}}  % Precautionary Saving boost to consumption growth
+\newcommand{\chiFunc}{\pmb{\chi}}
+\newcommand{\Chi}{\ensuremath{\mathrm{X}}} % capital chi is sometimes useful, and not native to LaTeX
+\newcommand{\CLevBF}{\ensuremath{\mathbf{C}}}
+\newcommand{\cLevBF}{\ensuremath{\mathbf{c}}}
+\newcommand{\CLevE}{\CLev^{e}}
+\newcommand{\cLevE}{\cLev^{e}}
+\newcommand{\cLevFunc}{\ensuremath{\pmb{\cFunc}}}
+\newcommand{\CLevU}{\CLev^{u}}
+\newcommand{\cLevU}{\cLev^{u}}
+\newcommand{\cLev}{\ensuremath{c}}
+\newcommand{\CLev}{\ensuremath{C}}
+\newcommand{\Cons}{\ensuremath{C}}
+\newcommand{\cons}{\ensuremath{c}}
+\newcommand{\corr}{\varrho}
+\newcommand{\cPDVFunc}{\ensuremath{\mathbb{C}}}
+\newcommand{\CPDV}{\ensuremath{\text{PDV($C$)}}}
+\newcommand{\cPPP}{\cons^{\prime\prime\prime}}
+\newcommand{\cPP}{\cons^{\prime\prime}}
+\newcommand{\cP}{\cons^{\prime}}
+\newcommand{\cRatBF}{\ensuremath{\pmb{c}}}
+\newcommand{\CRatE}{\CRat^{e}}
+\newcommand{\cRatE}{\cRat^{e}}
+\newcommand{\CRatU}{\CRat^{u}}
+\newcommand{\cRatU}{\cRat^{u}}
+\newcommand{\CRat}{\ensuremath{C}}
+\newcommand{\cRat}{\ensuremath{c}}
+\newcommand{\CRRA}{\ensuremath{\rho}}
+\newcommand{\CTargE}{\CTarg^{\null}}
+\newcommand{\cTargE}{\ensuremath{\Target{c}^{e}}}
+\newcommand{\cTargTarg}{\Target{\Target{\cRat}}}
+\newcommand{\CTarg}{\ensuremath{\Target{C}}}
+\newcommand{\cTarg}{\ensuremath{\Target{c}}}
+\newcommand{\curr}{1}  % Permits a change of notation to T-1 and T, t and t+1, or whatever
+\newcommand{\Curr}{t}   % Permits a change of notation to T-1 and T, t and t+1, or whatever
+\newcommand{\CU}{\CRat^{u}}
+\newcommand{\cU}{\cRat^{u}}
+\newcommand{\dRat}{\ensuremath{d}}
+\newcommand{\debtLim}{\mathsf{d}}
+\newcommand{\Debt}{\ensuremath{D}}
+\newcommand{\debt}{\ensuremath{d}}
+\newcommand{\DeprFac}{\ensuremath{\daleth}}
+\newcommand{\Depr}{\ensuremath{\daleth}}
+\newcommand{\depr}{\ensuremath{\delta}}
+\newcommand{\deprRte}{\ensuremath{\delta}} % New
+\newcommand{\DiscAltuAdj}{\ensuremath{\underline{\underline{\beth}}}}
+\newcommand{\DiscAlt}{\ensuremath{\beth}}
+\newcommand{\Discount}{\ensuremath{\beta}}
+\newcommand{\DiscRate}{\ensuremath{\vartheta}}
+\newcommand{\DiscRte}{\ensuremath{\vartheta}} % New
+\newcommand{\DiscFac}{\ensuremath{\beta}} % New
+\newcommand{\DivGro}{\ensuremath{\mathsf{G}}}
+\newcommand{\divGro}{\ensuremath{\mathsf{g}}}
+\newcommand{\Div}{\ensuremath{D}}
+\newcommand{\div}{\ensuremath{d}}
+\newcommand{\DLev}{\ensuremath{D}}
+\newcommand{\Dvdnd}{\ensuremath{\mathbf{D}}}
+\newcommand{\dvdnd}{\ensuremath{d}}
+\newcommand{\edvdnd}{\grave{\dvdnd}}
+\newcommand{\EEndMap}{\ensuremath{\mathsf{E}}}
+\newcommand{\effUnits}{\ensuremath{X}}
+\newcommand{\eFunc}{\ensuremath{\mathrm{e}}}
+\newcommand{\ELev}{\ensuremath{E}}
+\newcommand{\ek}{\ensuremath{\lambda}}
+\newcommand{\EmpGro}{\ensuremath{\Xi}}
+\newcommand{\empGro}{\ensuremath{\xi}}
+\newcommand{\empState}{\xi} % employment state indicator variable
+\newcommand{\EpremLog}{\varphi} % Not using regular \eprem because want to distinguish between \varphi = log E_{t}[\Phi_{t+1}] and \phi_{t} = E[\log \Phi_{t}]
+\newcommand{\EPrem}{\Phi} % equity premium
+\newcommand{\eprem}{\phi} % log equity premium
+\newcommand{\EpShkInv}{\Ex[\pShk^{-1}]}
+\newcommand{\erate}{\ensuremath{\cancel{\mho}}}
+\newcommand{\error}{\ensuremath{\epsilon}}
+\newcommand{\Err}{\ensuremath{Z}}
+\newcommand{\err}{\ensuremath{z}}
+\newcommand{\err}{\ensuremath{z}}
+\newcommand{\Estdr}{\ensuremath{\sigma_{\risky}}} % Standard deviation of log return on risky asset
+\newcommand{\Evarr}{\ensuremath{\sigma_{\risky}^{2}}} % Variance of log return on risky asset
+\newcommand{\EVarr}{\sigma_{\Risky}^{2}} % Variance of level return on risky asset (when returns norm dist)
+\newcommand{\expend}{\ensuremath{\xi}}
+\newcommand{\Ex}{\ensuremath{\mathbb{E}}} % Expectations
+\newcommand{\FDist}{\ensuremath{\mathcal{F}}}
+\newcommand{\fDist}{\ensuremath{\mathcal{f}}}
+\newcommand{\FFunc}{\ensuremath{\mathrm{F}}}
+\newcommand{\fFunc}{\ensuremath{\mathrm{f}}}
+\newcommand{\FLev}{\ensuremath{F}}
+\newcommand{\fLev}{\ensuremath{f}}
+\newcommand{\fPP}{\ensuremath{\mathrm{f}^{\prime\prime}}}
+\newcommand{\FPP}{\ensuremath{\mathrm{F}^{\prime\prime}}}
+\newcommand{\fP}{\ensuremath{\mathrm{f}^{\prime}}}
+\newcommand{\FP}{\ensuremath{\mathrm{F}^{\prime}}}
+\newcommand{\GLev}{\ensuremath{G}}
+\newcommand{\GovNW}{\ensuremath{N}}
+\newcommand{\govNW}{\ensuremath{n}}
+\newcommand{\GovSpend}{\ensuremath{X}}
+\newcommand{\govSpend}{\ensuremath{x}}
+\newcommand{\Habit}{\ensuremath{H}}
+\newcommand{\Habit}{\ensuremath{H}}
+\newcommand{\habit}{\ensuremath{h}}
+\newcommand{\Ham}{\ensuremath{\mathcal{H}}} % Hamiltonian
+\newcommand{\HARKcore}{\texttt{HARKcore}}
+\newcommand{\hEndMin}{\ensuremath{\underline{\mathfrak{h}}}}
+\newcommand{\hEnd}{\ensuremath{\mathfrak{h}}}
+\newcommand{\hFunc}{\ensuremath{\mathrm{h}}}
+\newcommand{\Hi}{\hat}
+\newcommand{\HLev}{\ensuremath{H}}
+\newcommand{\HLevBF}{\ensuremath{\mathbf{H}}}
+\newcommand{\hLevBF}{\ensuremath{\mathbf{h}}}
+\newcommand{\HLev}{\ensuremath{\pmb{H}}}
+\newcommand{\hLev}{\ensuremath{\pmb{h}}}
+\newcommand{\hMin}{\ensuremath{\underline{\h}}}
+\newcommand{\HMin}{\ensuremath{\underline{H}}}
+\newcommand{\hours}{\ensuremath{\mathfrak{h}}}
+\newcommand{\Hours}{\ensuremath{\mathfrak{H}}}
+\newcommand{\HRat}{\ensuremath{H}}
+\newcommand{\hRat}{\ensuremath{h}}
+\newcommand{\h}{\ensuremath{h}}
+\newcommand{\H}{\ensuremath{H}}
+\newcommand{\iFunc}{\ensuremath{\mathrm{i}}}
+\newcommand{\IFunc}{\ensuremath{\mathrm{I}}}
+\newcommand{\ILev}{\ensuremath{I}}
+\newcommand{\iLev}{\ensuremath{i}}
+\newcommand{\impg}{{\imath}_{\pGro}}
+\newcommand{\ImpG}{{\Im}_{\PGro}}
+\newcommand{\impr}{{\imath}_{\rfree}}
+\newcommand{\ImpR}{{\Im}_{\Rfree}}
+\newcommand{\Inc}{{Y}}
+\newcommand{\inc}{{y}}
+\newcommand{\InvEpShkInv}{\acute{\psi}}
+\newcommand{\InvEpShkInv}{\underline{\psi}}
+\newcommand{\Inv}{{I}}
+\newcommand{\inv}{{i}}
+\newcommand{\IRat}{\ensuremath{I}}
+\newcommand{\iRat}{\ensuremath{i}}
+\newcommand{\itc}{\ensuremath{\zeta}}
+\newcommand{\jFunc}{\ensuremath{\mathrm{j}}}
+\newcommand{\JLev}{\ensuremath{J}}
+\newcommand{\kapRent}{\ensuremath{\varkappa}}
+\newcommand{\kapShare}{\ensuremath{\gamma}}
+\newcommand{\Kap}{{K}}
+\newcommand{\kap}{{k}}
+\newcommand{\KFunc}{\ensuremath{\mathrm{K}}}
+\newcommand{\kFunc}{\ensuremath{\mathrm{k}}}
+\newcommand{\KLevBF}{\ensuremath{\mathbf{K}}}
+\newcommand{\kLevBF}{\ensuremath{\mathbf{k}}}
+\newcommand{\KLev}{\ensuremath{K}}
+\newcommand{\kLev}{\ensuremath{k}}
+\newcommand{\kPriceAfterITC}{\ensuremath{\mathscr{P}}}
+\newcommand{\kPrice}{\ensuremath{\mathsf{P}}}
+\newcommand{\KRat}{\ensuremath{K}}
+\newcommand{\kRat}{\ensuremath{k}}
+\newcommand{\kTargE}{\ensuremath{\Target{k}^{e}}}
+\newcommand{\kTarg}{\ensuremath{\Target{k}}}
+\newcommand{\labor}{\ensuremath{\ell}} %
+\newcommand{\Labor}{\ensuremath{L}}
+\newcommand{\labShare}{\ensuremath{\nu}}
+\newcommand{\Leisure}{Z} %
+\newcommand{\leisure}{z} %
+\newcommand{\leiShare}{\ensuremath{\zeta}} %
+\newcommand{\LGro}{\ensuremath{\Lambda}}
+\newcommand{\lGro}{\ensuremath{\lambda}}
+\newcommand{\LLevBF}{\ensuremath{\mathbf{L}}}
+\newcommand{\lLevBF}{\ensuremath{\pmb{\ell}}}
+\newcommand{\lLev}{\ensuremath{\ell}}
+\newcommand{\LLev}{\ensuremath{L}}
+\newcommand{\Lo}{\check}
+\newcommand{\LRat}{\ensuremath{L}}
+\newcommand{\MaxMaxMPC}{\ensuremath{\bar{\bar{\kappa}}}}
+\newcommand{\MaxMinMPC}{\ensuremath{\hat{\underline{\kappa}}}}
+\newcommand{\MaxMPC}{\ensuremath{\bar{\kappa}}}
+\newcommand{\MaxMPS}{\ensuremath{\PatR}}
+\newcommand{\Mean}{\ensuremath{\mathbb{M}}} % Mean
+\newcommand{\mEss}{\check{m}^{e}}
+\newcommand{\ME}{\MRat^{e}}
+\newcommand{\mE}{\mRat^{e}}
+\newcommand{\mFunc}{\ensuremath{\mathrm{m}}}
+\newcommand{\MinMinMPC}{\ensuremath{\underline{\kappa}}}
+\newcommand{\MinMPC}{\ensuremath{\uline{\kappa}}}
+\newcommand{\MinMPS}{\ensuremath{\pZero^{1/\CRRA} \PatR}}
+\newcommand{\MLevBF}{\ensuremath{\mathbf{M}}}
+\newcommand{\mLevBF}{\ensuremath{\mathbf{m}}}
+\newcommand{\mLevBF}{\ensuremath{\mathbf{m}}}
+\newcommand{\mLevE}{\mLev^{e}}
+\newcommand{\MLev}{\ensuremath{M}}
+\newcommand{\mLev}{\ensuremath{m}}
+\newcommand{\MPCE}{\MPC^{e}}
+\newcommand{\MPCFunc}{\ensuremath{\pmb{\kappa}}}
+\newcommand{\MPCPPF}{\ensuremath{\Pi}}
+\newcommand{\MPCP}{\ensuremath{\pi}}
+\newcommand{\MPCU}{\MPC^{u}}
+\newcommand{\MPC}{\ensuremath{\kappa}}
+\newcommand{\MPSFunc}{\ensuremath{\pmb{lambda}}}
+\newcommand{\MPS}{\ensuremath{\lambda}}
+\newcommand{\MRatE}{\MRat^{e}}
+\newcommand{\mRatE}{\mRat^{e}}
+\newcommand{\MRat}{\ensuremath{M}}
+\newcommand{\mRat}{\ensuremath{m}}
+\newcommand{\MSS}{\ensuremath{\breve{M}}}
+\newcommand{\mSS}{\ensuremath{\breve{m}}}
+\newcommand{\mTarg}{\check{m}}
+\newcommand{\MU}{{M}^{u}}
+\newcommand{\mU}{{m}^{u}}
+\newcommand{\m}{\ensuremath{m}}
+\newcommand{\M}{\ensuremath{M}}
+\newcommand{\next}{2}  % via search-and-replace
+\newcommand{\Next}{t+1} %
+\newcommand{\nFunc}{\ensuremath{\mathrm{n}}}
+\newcommand{\NLev}{\ensuremath{N}}
+\newcommand{\nLev}{\ensuremath{n}}
+\newcommand{\NRat}{\ensuremath{N}}
+\newcommand{\nRat}{\ensuremath{n}}
+\newcommand{\Num}{\ensuremath{N}}
+\newcommand{\n}{\ensuremath{n}}
+\newcommand{\OLevBF}{\ensuremath{O}}
+\newcommand{\oLevBF}{\ensuremath{\mathbf{o}}}
+\newcommand{\OLev}{\ensuremath{O}}
+\newcommand{\oLev}{\ensuremath{\pmb{o}}}
+\newcommand{\ORat}{\ensuremath{O}}
+\newcommand{\oRat}{\ensuremath{o}}
+\newcommand{\Pareto}{\zeta}
+\newcommand{\PatPGroAdj}{\text{\pmb{\Thorn}}_{\acute{\PGro}}}
+\newcommand{\patpGroAdj}{\text{\thorn}_{\acute{\pGro}}}
+\newcommand{\patpGrohat}{\hat{\text{\thorn}}_{\pGro}}
+\newcommand{\PatPGro}{\text{\pmb{\Thorn}}_{\PGro}}
+\newcommand{\patpGro}{\text{\thorn}_{\pGro}}
+\newcommand{\PatR}{\text{\pmb{\Thorn}}_{\Rfree}}
+\newcommand{\patr}{\text{\thorn}_{\rfree}}
+\newcommand{\PatU}{\text{\pmb{\Thorn}}_{\urate}}
+\newcommand{\patu}{\text{\thorn}_{\urate}}
+\newcommand{\PatWGro}{\text{\pmb{\Thorn}}_{\WGro}}
+\newcommand{\patwGro}{\text{\thorn}_{\wGro}}
+\newcommand{\Pat}{\text{\pmb{\Thorn}}}
+\newcommand{\pat}{\text{\thorn}}
+\newcommand{\pDeadRate}{\ensuremath{\grave{\cancel{\mathsf{d}}}}}
+\newcommand{\pDead}{\ensuremath{\mathfrak{D}}}
+\newcommand{\pDieRate}{\ensuremath{\grave{\mathsf{d}}}}
+\newcommand{\pDies}{\ensuremath{\mathrm{d}}} % Continuous time death rate
+\newcommand{\PDies}{\ensuremath{\mathsf{D}}} % Discrete-time one-period death rate
+\newcommand{\PDV}{\ensuremath{\mathbb{P}}} % PDV
+\newcommand{\PGroAdj}{\ensuremath{\underline{\PGro}}}
+\newcommand{\pGroAdj}{\ensuremath{\underline{\pGro}}}
+\newcommand{\PGrouAdj}{\ensuremath{\underline{\underline{\PGro}}}}
+\newcommand{\pGrouAdj}{\ensuremath{\underline{\underline{{\pGro}}}}}
+\newcommand{\PGro}{\ensuremath{\Gamma}}
+\newcommand{\pGro}{\ensuremath{\gamma}}
+\newcommand{\phiFunc}{\ensuremath{\digamma}}
+\newcommand{\PIHMPC}{\ensuremath{\varkappa}}
+\newcommand{\PInc}{\ensuremath{P}}
+\newcommand{\PLabor}{\ensuremath{P}} % Permanent labor income in levels
+\newcommand{\Plabor}{P} % Permanent labor income in levels
+\newcommand{\PLevBF}{\ensuremath{\mathbf{P}}}
+\newcommand{\pLevBF}{\ensuremath{\mathbf{p}}}
+\newcommand{\PLev}{\ensuremath{P}}
+\newcommand{\pLev}{\ensuremath{\pmb{p}}}
+\newcommand{\PLev}{\ensuremath{P}}
+\newcommand{\PLives}{\ensuremath{\cancel{\PDies}}}
+\newcommand{\pLives}{\ensuremath{\cancel{\pDies}}}
+\newcommand{\pNotZero}{\ensuremath{\cancel{\wp}}}
+\newcommand{\PopE}{\mathcal{E}}
+\newcommand{\popE}{e}
+\newcommand{\PopGro}{\ensuremath{\Xi}}
+\newcommand{\popGro}{\ensuremath{\xi}}
+\newcommand{\PopLev}{\ensuremath{\pmb{N}}}
+\newcommand{\PopU}{\mathcal{U}}
+\newcommand{\Pop}{\ensuremath{L}}
+\newcommand{\PostITC}{\ensuremath{\cancel{\zeta}}}
+\newcommand{\power}{\ensuremath{\eta}}
+\newcommand{\pPDVFunc}{\ensuremath{\mathbb{P}}}
+\newcommand{\PPDV}{\ensuremath{\text{PDV($P$)}}}
+\newcommand{\pRat}{\ensuremath{p}}
+\newcommand{\Price}{\ensuremath{\mathsf{P}}}
+\newcommand{\ProdFunc}{\ensuremath{\mathrm{F}}}
+\newcommand{\ProdFunc}{\ensuremath{\mathrm{F}}}
+\newcommand{\prodFunc}{\ensuremath{\mathrm{f}}}
+\newcommand{\prudEx}{\ensuremath{\omega}}
+\newcommand{\prud}{\ensuremath{\eta}}
+\newcommand{\pSav}{\ensuremath{\phi}}
+\newcommand{\pShkMin}{\underline{\psi}} %
+\newcommand{\PShk}{\Psi} %
+\newcommand{\PermShkAgg}{\Psi} % New
+\newcommand{\PermShk}{\Psi} % New
+\newcommand{\permShk}{\psi} % New
+\newcommand{\pShk}{\psi} %
+\newcommand{\permShkInd}{\psi} % New
+\newcommand{\pshk}{\psi} %
+\newcommand{\PtyGro}{\ensuremath{\Phi}}
+\newcommand{\ptyGro}{\ensuremath{\phi}}
+\newcommand{\PtyLab}{\ensuremath{\mathrm{Z}}} % Labor productivity
+\newcommand{\ptyLab}{\ensuremath{z}} % usually, log of \PtyLab
+\newcommand{\PtyLev}{\ensuremath{A}} % Multiplies overall production function
+\newcommand{\ptyLev}{\ensuremath{a}} % Usually, log of \PtyLev
+\newcommand{\pZero}{\ensuremath{\wp}}
+\newcommand{\QLev}{\ensuremath{Q}}
+\newcommand{\q}{\ensuremath{\koppa}}
+\newcommand{\RCpnd}{\ensuremath{\mathbf{R}}}
+\newcommand{\RevFunc}{\ensuremath{\pmb{\Pi}}}
+\newcommand{\revFunc}{\ensuremath{\pmb{\pi}}}
+\newcommand{\Rev}{\ensuremath{\Pi}}
+\newcommand{\rev}{\ensuremath{\pi}}
+\newcommand{\rfree}{\ensuremath{\mathsf{r}}}   % The net return on the safe asset at an annual rate
+\newcommand{\Rfree}{\ensuremath{\mathsf{R}}}   % The return factor on the safe asset - unfortunately mathfrak fonts don't come through for tth
+\newcommand{\RFunc}{\ensuremath{\mathrm{R}}}
+\newcommand{\RGross}{\ensuremath{\breve{\mathsf{R}}}}
+\newcommand{\rGross}{\ensuremath{\breve{\mathsf{r}}}}
+\newcommand{\RiskyAlt}{\ensuremath{\acute{\mathbf{R}}}}    % The return on the risky asset
+\newcommand{\riskyAlt}{\ensuremath{\acute{\mathbf{r}}}}  % The net return on the risky asset annual rate
+\newcommand{\riskyshare}{\ensuremath{\varsigma}}
+\newcommand{\Risky}{\ensuremath{\mathbf{R}}}    % The return on the risky asset
+\newcommand{\risky}{\ensuremath{\mathbf{r}}}  % The net return on the risky asset annual rate
+\newcommand{\RLev}{\ensuremath{R}}    % Rate of return (but better to use \Rfree or \Risky or something else more specific
+\newcommand{\RnormWGro}{\ensuremath{\mathcal{R}_{\WGro}}}    % Normalized version of riskless return factor
+\newcommand{\rnormwGro}{\ensuremath{\mathit{r}_{\wGro}}}    % Normalized version of riskless rate of return
+\newcommand{\Rnorm}{\ensuremath{\mathcal{R}}}    % Normalized version of riskless return factor
+\newcommand{\rnorm}{\ensuremath{\mathit{r}}}    % Normalized version of riskless rate of return
+\newcommand{\Rport}{\ensuremath{\pmb{\mathfrak{R}}}}    % Portfolio -weighted return
+\newcommand{\rport}{\ensuremath{\pmb{\mathfrak{r}}}}    % Portfolio -weighted return
+\newcommand{\rProd}{\ensuremath{\mathit{r}}}
+\newcommand{\Rprod}{\ensuremath{\mathscr{R}}}
+\newcommand{\rprod}{\ensuremath{\mathscr{r}}}
+\newcommand{\RProd}{\ensuremath{\mathsf{R}}}
+\newcommand{\RSave}{\ensuremath{\ushort{\Rfree}}}
+\newcommand{\rsave}{\ensuremath{\ushort{\rfree}}}
+\newcommand{\RBoro}{\ensuremath{\bar{\Rfree}}}
+\newcommand{\rboro}{\ensuremath{\bar{\rfree}}}
+\newcommand{\R}{\Rfree}
+\newcommand{\saveRate}{\grave{s}} % saving (income minus consumption) over income
+\newcommand{\Save}{S} % Saving (income minus consumption)
+\newcommand{\save}{s} % saving (income minus consumption)
+\newcommand{\SDF}{\MLev} % Stochastic Discount Factor
+\newcommand{\sdr}{\mRat} % Stochastic Discount rate
+\newcommand{\Seniority}{\ensuremath{\mathsf{X}}}
+\newcommand{\seniority}{\ensuremath{\mathsf{x}}}
+\newcommand{\SeverancePayment}{\ensuremath{\mathcal{S}}}
+\newcommand{\SeveranceRatio}{\ensuremath{\varsigma}}
+\newcommand{\Severance}{\ensuremath{\varsigma}}
+\newcommand{\SE}{\SRat^{e}}
+\newcommand{\sE}{\sRat^{e}}
+\newcommand{\sFunc}{\ensuremath{\mathrm{s}}}
+\newcommand{\shk}{\phi}
+\newcommand{\Shk}{\Phi}
+\newcommand{\ShkLogZeroLogStd}{\sigma_{\cancel{\ShkMeanOneLog}}}  % Std of that shock
+\newcommand{\ShkLogZeroLogVar}{\sigma_{\cancel{\ShkMeanOneLog}}^{2}}  % Variance of that shock
+\newcommand{\ShkLogZeroLog}{\cancel{\ShkMeanOneLog}}  % Log of that shock
+\newcommand{\ShkLogZero}{\cancel{\ShkMeanOne}}     % A shock whose expectation in logs is zero; cancellation of the nonzero mean for the mean one shock
+\newcommand{\ShkMeanOneLogStd}{\sigma_{\ShkMeanOneLog}}  % Std of that shock
+\newcommand{\ShkMeanOneLogVar}{\sigma^{2}_{\ShkMeanOneLog}}  % Log of that shock
+\newcommand{\ShkMeanOneLog}{\theta}  % Log of that shock
+\newcommand{\ShkMeanOne}{\Theta}     % A shock whose expectation in levels is always equal to one regardless of variance
+\newcommand{\SLevBF}{\mathbf{S}}
+\newcommand{\sLevBF}{\mathbf{s}}
+\newcommand{\SLevE}{\SLev^{e}}
+\newcommand{\sLevE}{\sLev^{e}}
+\newcommand{\SLevU}{\SLev^{u}}
+\newcommand{\sLevU}{\sLev^{u}}
+\newcommand{\SLev}{\ensuremath{S}}
+\newcommand{\sLev}{\ensuremath{s}}
+\newcommand{\srate}{\ensuremath{\varsigma}}
+\newcommand{\SRatE}{\SRat^{e}}
+\newcommand{\sRatE}{\sRat^{e}}
+\newcommand{\SRatU}{\SRat^{u}}
+\newcommand{\sRatU}{\sRat^{u}}
+\newcommand{\SRat}{\ensuremath{S}}
+\newcommand{\sRat}{\ensuremath{s}}
+\newcommand{\STargE}{\Target{\SRat}^{\null}}
+\newcommand{\sTargE}{\Target{\sRat}^{\null}}
+\newcommand{\STargTarg}{\Target{\Target{\SRat}}}
+\newcommand{\sTargTarg}{\Target{\Target{\sRat}}}
+\newcommand{\STarg}{\Target{\SRat}}
+\newcommand{\sTarg}{\Target{\sRat}}
+\newcommand{\Steady}{\bar}
+\newcommand{\Stocks}{{S}}
+\newcommand{\stocks}{{s}}
+\newcommand{\straight}{\Pi}
+\newcommand{\Surplus}{\ensuremath{Z}}
+\newcommand{\surplus}{\ensuremath{z}}
+\newcommand{\SU}{\SRat^{u}}
+\newcommand{\sU}{\sRat^{u}}
+\newcommand{\Target}{\check}
+\newcommand{\TaxCombInv}{\ensuremath{\mathcal{T}^{-1}}}
+\newcommand{\TaxComb}{\ensuremath{\mathcal{T}}}
+\newcommand{\TaxCorp}{\ensuremath{\tau}}
+\newcommand{\taxDep}{\ensuremath{\partial}}
+\newcommand{\TaxFree}{\ensuremath{\cancel{\Tax}}}
+\newcommand{\TaxLev}{T}
+\newcommand{\TaxNetTrans}{\ensuremath{Z}}
+\newcommand{\taxNetTrans}{\ensuremath{z}}
+\newcommand{\TaxPaid}{\ensuremath{T}}
+\newcommand{\TaxRate}{\ensuremath{t}}
+\newcommand{\TaxUI}{\ensuremath{\tau}}
+\newcommand{\Tax}{\ensuremath{\tau}}
+\newcommand{\tax}{\tau}
+\newcommand{\tBak}{\ensuremath{\pmb{n}}}
+\newcommand{\TEatBak}{\ensuremath{\mathtt{q}}}
+\newcommand{\TEat}{\ensuremath{\TEnd}}
+\newcommand{\TEndBak}{\ensuremath{\mathsf{p}}}
+\newcommand{\TEnd}{\ensuremath{T}}
+\newcommand{\TermTime}{\ensuremath{T}}
+\newcommand{\tFwd}{\ensuremath{n}}
+\newcommand{\tHorOfm}{\ensuremath{\pmb{n}}}
+\newcommand{\tHor}{\ensuremath{\mathsf{n}}}
+\newcommand{\timeRate}{\ensuremath{\vartheta}}
+\newcommand{\tinyAmount}{\ensuremath{\epsilon}}
+\newcommand{\TLev}{\ensuremath{T}}
+\newcommand{\TMap}{\mathscr{T}}
+\newcommand{\tNow}{\ensuremath{t}}
+\newcommand{\tShkAll}{\xi} %
+\newcommand{\tShkEmpMin}{\underline{\theta}} %
+\newcommand{\TShkEmp}{\Theta} %
+\newcommand{\tShkEmp}{\theta} %
+\newcommand{\tShkEmp}{\theta} %
+\newcommand{\tranShkInd}{\theta} % New
+\newcommand{\TranShkAgg}{\Theta} % New
+\newcommand{\TShk}{\Xi} %
+\newcommand{\tShk}{\xi} %
+\newcommand{\tshk}{\xi} %
+\newcommand{\tSS}{\ensuremath{t}}
+\newcommand{\tThen}{\ensuremath{\tau}}
+\newcommand{\uFunc}{{\ensuremath{\mathrm{u}}}}
+\newcommand{\uInvEpShkuInv}{\underline{\underline{\psi}}}
+\newcommand{\ULev}{\ensuremath{U}}
+\newcommand{\uLev}{\ensuremath{u}}
+\newcommand{\unins}{\ensuremath{\zeta}}
+\newcommand{\uPDVFunc}{\ensuremath{\mathbb{U}}}
+\newcommand{\uPmt}{\ensuremath{\mu}}
+\newcommand{\uPPP}{{\ensuremath{\mathrm{u}^{\prime\prime\prime}}}}
+\newcommand{\uPP}{{\ensuremath{\mathrm{u}^{\prime\prime}}}}
+\newcommand{\uP}{{\ensuremath{\mathrm{u}^{\prime}}}}
+\newcommand{\urate}{\ensuremath{\mho}}
+\newcommand{\utilFunc}{\ensuremath{\mathrm{u}}}
+\newcommand{\util}{\ensuremath{u}}
+\newcommand{\ValAlt}{\ensuremath{\mathcal{V}}} % middle-of-period Value function
+\newcommand{\valfn}{\ensuremath{\mathrm{v}}} % middle-of-period value function
+\newcommand{\Value}{\ensuremath{\mathrm{V}}} % middle-of-period Value function
+\newcommand{\VEndFunc}{\ensuremath{\mathfrak{V}}}
+\newcommand{\vEndFunc}{\ensuremath{\mathfrak{v}}}
+\newcommand{\VEnd}{\ensuremath{\mathfrak{V}}} % end-of-period Value function
+\newcommand{\vEnd}{\ensuremath{\mathfrak{v}}} % end-of-period value function
+\newcommand{\vEss}{\check{v}^{e}}
+\newcommand{\VE}{{V}^{e}}
+\newcommand{\vE}{{v}^{e}}
+\newcommand{\vFirm}{\ensuremath{\mathrm{e}}}
+\newcommand{\VFunc}{\ensuremath{\mathrm{V}}}
+\newcommand{\vFunc}{\ensuremath{\mathrm{v}}}
+\newcommand{\VInv}{\ensuremath{\Lambda}}
+\newcommand{\vInv}{\ensuremath{\scriptstyle \Lambda \displaystyle}}
+\newcommand{\vk}{\ensuremath{\lambda}}
+\newcommand{\vLevBF}{\ensuremath{\mathbf{v}}}
+\newcommand{\VLevFunc}{\ensuremath{\pmb{\mathrm{V}}}}
+\newcommand{\vLevFunc}{\ensuremath{\pmb{\mathrm{v}}}}
+\newcommand{\VLev}{\ensuremath{V}}
+\newcommand{\vLev}{\ensuremath{v}}
+\newcommand{\vNorm}{\ensuremath{\mathrm{w}}} % end-of-period value function
+\newcommand{\VNum}{\ensuremath{V}}
+\newcommand{\vNum}{\ensuremath{v}}
+\newcommand{\vOptAlt}{\ensuremath{\Alt{\tilde{\mathfrak{v}}}}}
+\newcommand{\vOpt}{\ensuremath{\tilde{\mathfrak{v}}}}
+\newcommand{\VRat}{\ensuremath{V}}
+\newcommand{\vRat}{\ensuremath{v}}
+\newcommand{\vTarg}{\Target{\vRat}}
+\newcommand{\VU}{{V}^{u}}
+\newcommand{\vU}{{v}^{u}}
+\newcommand{\Wage}{\ensuremath{\mathsf{W}}}
+\newcommand{\wage}{\ensuremath{\mathsf{w}}}
+\newcommand{\WAllLev}{\ensuremath{\mathbf{O}}}
+\newcommand{\wAllLev}{\ensuremath{\mathbf{o}}}
+\newcommand{\WAllRat}{\ensuremath{O}}
+\newcommand{\wAllRat}{\ensuremath{o}}
+\newcommand{\WAll}{{O}}
+\newcommand{\wAll}{{o}}
+\newcommand{\WBeg}{\KLev} % Wealth as of the beginning of the period (before R is received, not including Y)
+\newcommand{\wBeg}{\kLev} % wealth as of the beginning of the period (before R is received, not including Y)
+\newcommand{\Wealth}{\ensuremath{O}}
+\newcommand{\wealth}{\ensuremath{o}}
+\newcommand{\WEndRat}{\ARat} %
+\newcommand{\wEndRat}{\aRat} %
+\newcommand{\WEnd}{\ALev} % Wealth as of the end of the period (after C has been chosen)
+\newcommand{\wEnd}{\aLev} % wealth as of the end of the period (after C has been taken)
+\newcommand{\Wend}{\ARat} % Wealth as of the end of the period (after C has been chosen)
+\newcommand{\wend}{\aRat} % wealth as of the end of the period (after C has been taken)
+\newcommand{\wFunc}{\mathrm{w}}
+\newcommand{\WGroPF}{\ensuremath{\mathsf{G}}}
+\newcommand{\WGro}{\ensuremath{\mathsf{G}}}
+\newcommand{\wGro}{\ensuremath{\mathsf{g}}}
+\newcommand{\whumMin}{\underline{\hRat}} % human wealth -- individual
+\newcommand{\WHum}{\HLev} % Human wealth -- aggregate
+\newcommand{\wHum}{\hLev} % human wealth -- individual
+\newcommand{\Whum}{\HRat} % Human wealth -- aggregate
+\newcommand{\whum}{\hRat} % human wealth -- individual
+\newcommand{\WLev}{\ensuremath{W}}
+\newcommand{\wLev}{\pmb{w}}
+\newcommand{\WMid}{\BLev} % Wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\WMid}{\BLev} % Wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\wMid}{\bLev} % wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\Wmid}{\BRat} % Wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\wmid}{\bRat} % wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\WMkt}{\MLev} % Wealth as of the middle of the period (after R is received, including Y)
+\newcommand{\wMkt}{\mLev} % wealth as of the middle of the period (after R is received, including Y)
+\newcommand{\wmkt}{\mLev} % wealth as of the middle of the period (after R is received, including Y)
+\newcommand{\wNet}{\ensuremath{x}} %
+\newcommand{\WNet}{\ensuremath{X}} % Total wealth
+\newcommand{\WPre}{{K}}
+\newcommand{\wPre}{{k}}
+\newcommand{\wRat}{\ensuremath{o}} %
+\newcommand{\WRat}{\ensuremath{O}} % Ratio to permanent income
+\newcommand{\wTot}{\ensuremath{\mathbf{o}}} %
+\newcommand{\WTot}{\ensuremath{\mathbf{O}}} % Total wealth
+\newcommand{\wtot}{\ensuremath{o}} %
+\newcommand{\Wtot}{\ensuremath{O}} % Total wealth
+\newcommand{\xFer}{\chi}
+\newcommand{\XFer}{X}
+\newcommand{\xFunc}{\mathrm{x}}
+\newcommand{\XLev}{\ensuremath{X}}
+\newcommand{\xLev}{\ensuremath{x}}
+\newcommand{\xpend}{\ensuremath{\xi}}
+\newcommand{\XperGro}{\ensuremath{\mathsf{X}}}
+\newcommand{\xperGro}{\ensuremath{\mathsf{x}}}
+\newcommand{\XRat}{\ensuremath{X}}
+\newcommand{\xRat}{\ensuremath{x}}
+\newcommand{\yFunc}{\mathrm{y}}
+\newcommand{\yLevBF}{\ensuremath{\mathbf{y}}}
+\newcommand{\YLev}{\ensuremath{Y}}
+\newcommand{\YLevBF}{\ensuremath{\mathbf{Y}}}
+\newcommand{\yLev}{\ensuremath{y}}
+\newcommand{\YRat}{\ensuremath{Y}}
+\newcommand{\yRat}{\ensuremath{y}}
+\newcommand{\yTargE}{\ensuremath{\check{y}^{e}}}
+\newcommand{\yTarg}{\ensuremath{\check{y}}}
+\newcommand{\zAgg}{\ensuremath{\pmb{Z}}}
+\newcommand{\zFunc}{\mathrm{z}}
+\newcommand{\ZLevBF}{\ensuremath{\mathbf{Z}}}
+\newcommand{\zLevBF}{\ensuremath{\mathbf{z}}}
+\newcommand{\zLevBF}{\ensuremath{\pmb{z}}}
+\newcommand{\ZLev}{\ensuremath{Z}}
+\newcommand{\zLev}{\ensuremath{z}}
+\newcommand{\ZRat}{\ensuremath{Z}}
+\newcommand{\zRat}{\ensuremath{z}}
+
+\newcommand{\discRte}{\omega}
+\newcommand{\DieFac}{\pDead}
+\newcommand{\LivFac}{\Alive}
+\newcommand{\PopFac}{\PopGro}
+\newcommand{\popRte}{\popGro}
+
+
+\newcommand{\NFALev}{\NLev}
+\newcommand{\NFARat}{\NRat}
+\newcommand{\NI}{\ensuremath{Z}}
+\newcommand{\GDPLev}{\pmb{P}}
+\newcommand{\GDPRat}{P}
+\newcommand{\GDPGro}{\gimel}
+\newcommand{\gdpLev}{\pmb{p}}
+\newcommand{\gdpRat}{p}
+\newcommand{\weight}{\omega}
+
+
+\newcommand{\bi}{}
+\renewcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{}
+\renewcommand{\ei}{\end{itemize}}
+\newcommand{\reqd}{}
+\renewcommand{\reqd}{\item[$^{*}$]}
+\newcommand{\recm}{}
+\renewcommand{\recm}{\item[\phantom{$^{*}$}]}
+
+\newcommand{\Severance}{\kappa}
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}

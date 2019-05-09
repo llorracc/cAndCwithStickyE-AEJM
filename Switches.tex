@@ -1,0 +1,69 @@
+% Resources that need to be accessible from various different locations
+
+\renewcommand{\pDies}{\ensuremath{\mathsf{d}}}
+%\renewcommand{\PDies}{\ensuremath{\mathsf{D}}}
+%\renewcommand{\PLives}{\ensuremath{(1-\mathsf{D})}}
+
+\newcommand{\aggrSavingRuleCoeff}{\ensuremath{\kappa}}
+\newcommand{\stnRatio}{\ensuremath{\tau}}
+
+\newcommand{\TabsDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables}\newcommand{\Calibration}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration}
+\newcommand{\W}{\mathcal{W}}            % Include or exclude aggregate wage in individual problem - to include, should be \newcommand{\W}{W}
+
+\provideboolean{Depreciation}
+\setboolean{Depreciation}{true}
+%\setboolean{Depreciation}{false}
+\provideboolean{MicroDepr}
+\setboolean{MicroDepr}{true}
+%\setboolean{Depreciation}{false}
+\newcommand{\ifDepr}{\ifthenelse{\boolean{Depreciation}}}
+\newcommand{\MicroDepr}{\ifthenelse{\boolean{MicroDepr}}}
+
+\newcommand{\RBet}{\mathbf{R}} % Bold  version is between-period rate; \mathcal version is within
+\newcommand{\rBet}{\mathbf{r}} % Bold  version is between-period rate; \mathcal version is within
+\newcommand{\RIn}{\mathcal{R}}
+\newcommand{\rIn}{r}
+
+
+\provideboolean{Growth}
+\setboolean{Growth}{true}
+\setboolean{Growth}{false}
+\newcommand{\ifGG}{\ifthenelse{\boolean{Growth}}}  % Switch for whether to include productivity growth in formulae; useful for programming/debugging
+
+
+\provideboolean{Slides}
+\setboolean{Slides}{false}
+\newcommand{\ifslides}{\ifthenelse{\boolean{Slides}}}
+
+\provideboolean{ZeroProb}
+\setboolean{ZeroProb}{false}
+\setboolean{ZeroProb}{true}
+\newcommand{\ifZero}{\ifthenelse{\boolean{ZeroProb}}}
+
+\provideboolean{DocVersion} % If true, produce an elaborate version of the document that contains all formulae used in the software
+\setboolean{DocVersion}{false}
+\setboolean{DocVersion}{true}
+%\newcommand{\ifDoc}{\ifthenelse{\boolean{DocVersion}}}
+\newcommand{\ifDoc}{\marginpar{\tiny{DocAndNodocVersions}}\emph}
+
+% ExtraExplain toggles whether to include the explanation for why we can't assume \bar{\ell}=\ell
+\provideboolean{ExtraExplain}
+\setboolean{ExtraExplain}{false}
+%\setboolean{ExtraExplain}{true}
+\newcommand{\ifExplain}{\ifthenelse{\boolean{ExtraExplain}}}
+
+\provideboolean{ShowStickyE}
+\setboolean{ShowStickyE}{true}
+\setboolean{ShowStickyE}{false}
+\newcommand{\StickyE}{\ifthenelse{\boolean{ShowStickyE}}}
+
+\newcommand{\eq}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations}
+\newcommand{\EqnDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations}
+
+\newcommand{\fm}{frictionless-$\mathbf{m}$ }
+\newcommand{\sm}{sticky-$\mathbf{m}$ }
+
+\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters}
+\newcommand{\TablesDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables}
+\newcommand{\DirCampManVsStickyE}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Empirical/US/Results/LaTeX/tables}
+\newcommand{\perc}[1]{\widetilde{#1}}

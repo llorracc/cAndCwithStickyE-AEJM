@@ -1,0 +1,661 @@
+
+   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
+ \newcommand{\FileOrNot}{\ifthenelse{\boolean{\fromFile}}}
+ \newcommand{\PischkePi}{0.83}
+ \newcommand{\fromFile}{false}
+% \newcommand{\div}{d} reserved for divide 
+% \newcommand{\riskyAlt}{\acute{\mathbf{r}}}  % The net return on the risky asset annual rate
+%\newcommand{\Ex}{\mathbb{E}} % Expectations
+%\newcommand{\H}{H}
+%\newcommand{\M}{M}
+%\newcommand{\RiskyAlt}{\acute{\mathbf{R}}}    % The return on the risky asset
+%\newcommand{\R}{\Rfree}
+%\newcommand{\Severance}{\varsigma}
+%\newcommand{\m}{m}
+%\newcommand{\next}{2}  % via search-and-replace
+%\newcommand{\zLevBF}{\mathbf{z}}
+\newcommand{\ALevBF}{\mathbf{A}}
+\newcommand{\ALev}{A}
+\newcommand{\ARat}{A}
+\newcommand{\ASS}{\ensuremath{A}}
+\newcommand{\ATarg}{\check{A}}
+\newcommand{\Age}{Z}
+\newcommand{\Alive}{\aleph}
+\newcommand{\Alt}{\grave}
+\newcommand{\BE}{\BRat^{e}}
+\newcommand{\BLevBF}{\mathbf{B}}
+\newcommand{\BLevE}{\BLev^{e}}
+\newcommand{\BLevU}{\BLev^{u}}
+\newcommand{\BLev}{B}
+\newcommand{\BRatE}{B^{e}}
+\newcommand{\BRat}{B}
+\newcommand{\BTargTarg}{\Target{\Target{\BRat}}}
+\newcommand{\BTarg}{\check{B}}
+\newcommand{\BU}{{B}^{u}}
+\newcommand{\CARA}{\alpha}
+\newcommand{\CDF}{\mathcal{F}}
+\newcommand{\CEndFunc}{\mathfrak{C}}
+\newcommand{\CE}{\CRat^{e}}
+\newcommand{\CFunc}{\mathrm{C}}
+\newcommand{\CGroOverG}{\Upsilon}
+\newcommand{\CGroOverR}{\Phi}
+\newcommand{\CGroPF}{\Lambda}
+\newcommand{\CGroPS}{\chi}  % Precautionary Saving boost to consumption growth
+\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}
+\newcommand{\CLevBF}{\mathbf{C}}
+\newcommand{\CLevE}{\CLev^{e}}
+\newcommand{\CLevU}{\CLev^{u}}
+\newcommand{\CLev}{C}
+\newcommand{\CPDV}{\text{PDV($C$)}}
+\newcommand{\CRRA}{\rho}
+\newcommand{\CRatE}{\CRat^{e}}
+\newcommand{\CRatU}{\CRat^{u}}
+\newcommand{\CRat}{C}
+\newcommand{\CTargE}{\CTarg^{\null}}
+\newcommand{\CTarg}{\Target{C}}
+\newcommand{\CU}{\CRat^{u}}
+\newcommand{\Chi}{\mathrm{X}} % capital chi is sometimes useful, and not native to LaTeX
+\newcommand{\Cons}{C}
+\newcommand{\Curr}{t}   % Permits a change of notation to T-1 and T, t and t+1, or whatever
+\newcommand{\DLev}{D}
+\newcommand{\Debt}{D}
+\newcommand{\DeprFac}{\daleth}
+\newcommand{\Depr}{\daleth}
+\newcommand{\DieFac}{\pDead}
+\newcommand{\DirCampManVsStickyE}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Empirical/US/Results/LaTeX/tables}
+\newcommand{\DiscAltuAdj}{\underline{\underline{\beth}}}
+\newcommand{\DiscAlt}{\beth}
+\newcommand{\DiscFac}{\beta} % New
+\newcommand{\DiscRate}{\vartheta}
+\newcommand{\DiscRte}{\vartheta} % New
+\newcommand{\Discount}{\beta}
+\newcommand{\DivGro}{\mathsf{G}}
+\newcommand{\Div}{D}
+\newcommand{\Dvdnd}{\mathbf{D}}
+\newcommand{\EEndMap}{\mathsf{E}}
+\newcommand{\ELev}{E}
+\newcommand{\EPrem}{\Phi} % equity premium
+\newcommand{\EVarr}{\sigma_{\Risky}^{2}} % Variance of level return on risky asset (when returns norm dist)
+\newcommand{\EmpGro}{\Xi}
+\newcommand{\EpShkInv}{\Ex[\pShk^{-1}]}
+\newcommand{\EpremLog}{\varphi} % Not using regular \eprem because want to distinguish between \varphi = log E_{t}[\Phi_{t+1}] and \phi_{t} = E[\log \Phi_{t}]
+\newcommand{\EqnDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations}
+\newcommand{\Err}{Z}
+\newcommand{\Estdr}{\sigma_{\risky}} % Standard deviation of log return on risky asset
+\newcommand{\Evarr}{\sigma_{\risky}^{2}} % Variance of log return on risky asset
+\newcommand{\FDist}{\mathcal{F}}
+\newcommand{\FFunc}{\mathrm{F}}
+\newcommand{\FLev}{F}
+\newcommand{\FPP}{\mathrm{F}^{\prime\prime}}
+\newcommand{\FP}{\mathrm{F}^{\prime}}
+\newcommand{\GDPGro}{\gimel}
+\newcommand{\GDPLev}{\pmb{P}}
+\newcommand{\GDPRat}{P}
+\newcommand{\GLev}{G}
+\newcommand{\GovNW}{N}
+\newcommand{\GovSpend}{X}
+\newcommand{\HARKcore}{\texttt{HARKcore}}
+\newcommand{\HLevBF}{\mathbf{H}}
+\newcommand{\HLev}{\pmb{H}}
+\newcommand{\HMin}{\underline{H}}
+\newcommand{\HRat}{H}
+\newcommand{\Habit}{H}
+\newcommand{\Ham}{\mathcal{H}} % Hamiltonian
+\newcommand{\Hi}{\hat}
+\newcommand{\Hours}{\mathfrak{H}}
+\newcommand{\IFunc}{\mathrm{I}}
+\newcommand{\ILev}{I}
+\newcommand{\IRat}{I}
+\newcommand{\ImpG}{{\Im}_{\PGro}}
+\newcommand{\ImpR}{{\Im}_{\Rfree}}
+\newcommand{\Inc}{{Y}}
+\newcommand{\InvEpShkInv}{\underline{\psi}}
+\newcommand{\Inv}{{I}}
+\newcommand{\JLev}{J}
+\newcommand{\KFunc}{\mathrm{K}}
+\newcommand{\KLevBF}{\mathbf{K}}
+\newcommand{\KLev}{K}
+\newcommand{\KRat}{K}
+\newcommand{\Kap}{{K}}
+\newcommand{\LGro}{\Lambda}
+\newcommand{\LLevBF}{\mathbf{L}}
+\newcommand{\LLev}{L}
+\newcommand{\LRat}{L}
+\newcommand{\Labor}{L}
+\newcommand{\Leisure}{Z} % 
+\newcommand{\LivFac}{\Alive}
+\newcommand{\Lo}{\check}
+\newcommand{\ME}{\MRat^{e}}
+\newcommand{\MLevBF}{\mathbf{M}}
+\newcommand{\MLev}{M}
+\newcommand{\MPCE}{\MPC^{e}}
+\newcommand{\MPCFunc}{\pmb{\kappa}}
+\newcommand{\MPCPPF}{\Pi}
+\newcommand{\MPCP}{\pi}
+\newcommand{\MPCU}{\MPC^{u}}
+\newcommand{\MPC}{\kappa}
+\newcommand{\MPSFunc}{\pmb{lambda}}
+\newcommand{\MPS}{\lambda}
+\newcommand{\MRatE}{\MRat^{e}}
+\newcommand{\MRat}{M}
+\newcommand{\MSS}{\breve{M}}
+\newcommand{\MU}{{M}^{u}}
+\newcommand{\MaxMPC}{\bar{\kappa}}
+\newcommand{\MaxMPS}{\PatR}
+\newcommand{\MaxMaxMPC}{\bar{\bar{\kappa}}}
+\newcommand{\MaxMinMPC}{\hat{\underline{\kappa}}}
+\newcommand{\Mean}{\mathbb{M}} % Mean
+\newcommand{\MicroDepr}{\ifthenelse{\boolean{MicroDepr}}}
+\newcommand{\MinMPC}{\uline{\kappa}}
+\newcommand{\MinMPS}{\pZero^{1/\CRRA} \PatR}
+\newcommand{\MinMinMPC}{\underline{\kappa}}
+\newcommand{\NFALev}{\NLev}
+\newcommand{\NFARat}{\NRat}
+\newcommand{\NI}{Z}
+\newcommand{\NLev}{N}
+\newcommand{\NRat}{N}
+\newcommand{\Next}{t+1} % 
+\newcommand{\Num}{N}
+\newcommand{\OLevBF}{\mathbf{O}}
+\newcommand{\OLev}{O}
+\newcommand{\ORat}{O}
+\newcommand{\PDV}{\mathbb{P}} % PDV
+\newcommand{\PDies}{\mathsf{D}} % Discrete-time one-period death rate
+\newcommand{\PGroAdj}{\underline{\PGro}}
+\newcommand{\PGrouAdj}{\underline{\underline{\PGro}}}
+\newcommand{\PGro}{\Gamma}
+\newcommand{\PIHMPC}{\varkappa}
+\newcommand{\PInc}{P}
+\newcommand{\PLabor}{P} % Permanent labor income in levels
+\newcommand{\PLevBF}{\mathbf{P}}
+\newcommand{\PLev}{P}
+\newcommand{\PLives}{\cancel{\PDies}}
+\newcommand{\PPDV}{\text{PDV($P$)}}
+\newcommand{\PShk}{\Psi} % 
+\newcommand{\Pareto}{\zeta}
+\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters}
+\newcommand{\PatPGroAdj}{\text{\pmb{\Thorn}}_{\acute{\PGro}}}
+\newcommand{\PatPGro}{\text{\pmb{\Thorn}}_{\PGro}}
+\newcommand{\PatR}{\text{\pmb{\Thorn}}_{\Rfree}}
+\newcommand{\PatU}{\text{\pmb{\Thorn}}_{\urate}}
+\newcommand{\PatWGro}{\text{\pmb{\Thorn}}_{\WGro}}
+\newcommand{\Pat}{\text{\pmb{\Thorn}}}
+\newcommand{\PermShkAgg}{\Psi} % New
+\newcommand{\PermShk}{\Psi} % New
+\newcommand{\PischkePiCancel}{0.17}
+\newcommand{\Plabor}{P} % Permanent labor income in levels
+\newcommand{\PopE}{\mathcal{E}}
+\newcommand{\PopFac}{\PopGro}
+\newcommand{\PopGro}{\Xi}
+\newcommand{\PopLev}{\pmb{N}}
+\newcommand{\PopU}{\mathcal{U}}
+\newcommand{\Pop}{L}
+\newcommand{\PostITC}{\cancel{\zeta}} 
+\newcommand{\Price}{\mathsf{P}}
+\newcommand{\ProdFunc}{\mathrm{F}}
+\newcommand{\PtyGro}{\Phi}
+\newcommand{\PtyLab}{\mathrm{Z}} % Labor productivity 
+\newcommand{\PtyLev}{A} % Multiplies overall production function
+\newcommand{\QLev}{Q}
+\newcommand{\RBet}{\mathbf{R}} \newcommand{\rBet}{\mathbf{r}} \newcommand{\RIn}{\mathcal{R}}
+\newcommand{\RBoro}{\bar{\Rfree}}
+\newcommand{\RCpnd}{\mathbf{R}}
+\newcommand{\RFunc}{\mathrm{R}}
+\newcommand{\RGross}{\breve{\mathsf{R}}}
+\newcommand{\RLev}{R}    % Rate of return (but better to use \Rfree or \Risky or something else more specific
+\newcommand{\RProd}{\mathsf{R}}
+\newcommand{\RSave}{\ushort{\Rfree}}
+\newcommand{\RevFunc}{\pmb{\Pi}}
+\newcommand{\Rev}{\Pi}
+\newcommand{\Rfree}{\mathsf{R}}   % The return factor on the safe asset - unfortunately mathfrak fonts don't come through for tth 
+\newcommand{\RiskyAlt}{\pmb{\mathfrak{R}}}    % The return on the risky asset
+\newcommand{\Risky}{\mathbf{R}}    % The return on the risky asset
+\newcommand{\RnormWGro}{\mathcal{R}_{\WGro}}    % Normalized version of riskless return factor
+\newcommand{\Rnorm}{\mathcal{R}}    % Normalized version of riskless return factor
+\newcommand{\Rport}{\mathbbmss{R}}    % Portfolio -weighted return
+\newcommand{\Rprod}{\mathscr{R}}
+\newcommand{\SDF}{\MLev} % Stochastic Discount Factor
+\newcommand{\SE}{\SRat^{e}}
+\newcommand{\SLevBF}{\mathbf{S}}
+\newcommand{\SLevE}{\SLev^{e}}
+\newcommand{\SLevU}{\SLev^{u}}
+\newcommand{\SLev}{S}
+\newcommand{\SRatE}{\SRat^{e}}
+\newcommand{\SRatU}{\SRat^{u}}
+\newcommand{\SRat}{S}
+\newcommand{\STargE}{\Target{\SRat}^{\null}}
+\newcommand{\STargTarg}{\Target{\Target{\SRat}}}
+\newcommand{\STarg}{\Target{\SRat}}
+\newcommand{\SU}{\SRat^{u}}
+\newcommand{\Save}{S} % Saving (income minus consumption) 
+\newcommand{\Seniority}{\mathsf{X}}
+\newcommand{\SeverancePayment}{\mathcal{S}}
+\newcommand{\SeveranceRatio}{\varsigma}
+\newcommand{\Severance}{\kappa}
+\newcommand{\ShkLogZeroLogStd}{\sigma_{\cancel{\ShkMeanOneLog}}}  % Std of that shock 
+\newcommand{\ShkLogZeroLogVar}{\sigma_{\cancel{\ShkMeanOneLog}}^{2}}  % Variance of that shock 
+\newcommand{\ShkLogZeroLog}{\cancel{\ShkMeanOneLog}}  % Log of that shock 
+\newcommand{\ShkLogZero}{\cancel{\ShkMeanOne}}     % A shock whose expectation in logs is zero; cancellation of the nonzero mean for the mean one shock
+\newcommand{\ShkMeanOneLogStd}{\sigma_{\ShkMeanOneLog}}  % Std of that shock
+\newcommand{\ShkMeanOneLogVar}{\sigma^{2}_{\ShkMeanOneLog}}  % Log of that shock
+\newcommand{\ShkMeanOneLog}{\theta}  % Log of that shock
+\newcommand{\ShkMeanOne}{\Theta}     % A shock whose expectation in levels is always equal to one regardless of variance
+\newcommand{\Shk}{\Phi}
+\newcommand{\Steady}{\bar}
+\newcommand{\StickyE}{\ifthenelse{\boolean{ShowStickyE}}}
+\newcommand{\Stocks}{{S}}
+\newcommand{\Surplus}{Z}
+\newcommand{\TEatBak}{\mathtt{q}}
+\newcommand{\TEat}{\TEnd}
+\newcommand{\TEndBak}{\mathsf{p}}
+\newcommand{\TEnd}{T}
+\newcommand{\TLev}{T}
+\newcommand{\TMap}{\mathscr{T}}
+\newcommand{\TShkEmp}{\Theta} % 
+\newcommand{\TShk}{\Xi} % 
+\newcommand{\TablesDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables}
+\newcommand{\TabsDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables}\newcommand{\Calibration}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration}
+\newcommand{\Target}{\check}
+\newcommand{\TaxCombInv}{\mathcal{T}^{-1}}
+\newcommand{\TaxComb}{\mathcal{T}}
+\newcommand{\TaxCorp}{\tau}
+\newcommand{\TaxFree}{\cancel{\Tax}}
+\newcommand{\TaxLev}{T}
+\newcommand{\TaxNetTrans}{Z}
+\newcommand{\TaxPaid}{T}
+\newcommand{\TaxRate}{t}
+\newcommand{\TaxUI}{\tau}
+\newcommand{\Tax}{\tau}
+\newcommand{\TermTime}{T}
+\newcommand{\TranShkAgg}{\Theta} % New
+\newcommand{\TranShocktpOne }{\Theta_{t}}
+\newcommand{\ULev}{U}
+\newcommand{\VEndFunc}{\mathfrak{V}}
+\newcommand{\VEnd}{\mathfrak{V}} % end-of-period Value function
+\newcommand{\VE}{{V}^{e}}
+\newcommand{\VFunc}{\mathrm{V}}
+\newcommand{\VInv}{\Lambda}
+\newcommand{\VLevFunc}{\pmb{\mathrm{V}}}
+\newcommand{\VLev}{V}
+\newcommand{\VNum}{V}
+\newcommand{\VRat}{V}
+\newcommand{\VU}{{V}^{u}}
+\newcommand{\ValAlt}{\mathcal{V}} % middle-of-period Value function
+\newcommand{\Value}{\mathrm{V}} % middle-of-period Value function
+\newcommand{\WAllLev}{\mathbf{O}}
+\newcommand{\WAllRat}{O}
+\newcommand{\WAll}{{O}}
+\newcommand{\WBeg}{\KLev} % Wealth as of the beginning of the period (before R is received, not including Y)
+\newcommand{\WEndRat}{\ARat} % 
+\newcommand{\WEnd}{\ALev} % Wealth as of the end of the period (after C has been chosen)
+\newcommand{\WGroPF}{\mathsf{G}}
+\newcommand{\WGro}{\mathsf{G}}
+\newcommand{\WHum}{\HLev} % Human wealth -- aggregate 
+\newcommand{\WLev}{W}
+\newcommand{\WMid}{\BLev} % Wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\WMkt}{\MLev} % Wealth as of the middle of the period (after R is received, including Y)
+\newcommand{\WNet}{X} % Total wealth
+\newcommand{\WPre}{{K}}
+\newcommand{\WRat}{O} % Ratio to permanent income
+\newcommand{\WTot}{\mathbf{O}} % Total wealth
+\newcommand{\Wage}{\mathsf{W}}
+\newcommand{\Wealth}{O}
+\newcommand{\Wend}{\ARat} % Wealth as of the end of the period (after C has been chosen)
+\newcommand{\Whum}{\HRat} % Human wealth -- aggregate 
+\newcommand{\Wmid}{\BRat} % Wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\Wtot}{O} % Total wealth
+\newcommand{\W}{\mathcal{W}}            
+\newcommand{\XFer}{X}
+\newcommand{\XLev}{X}
+\newcommand{\XRat}{X}
+\newcommand{\XperGro}{\mathsf{X}}
+\newcommand{\YLevBF}{\mathbf{Y}}
+\newcommand{\YLev}{Y}
+\newcommand{\YRat}{Y}
+\newcommand{\ZLevBF}{\mathbf{Z}}
+\newcommand{\ZLev}{Z}
+\newcommand{\ZRat}{Z}
+\newcommand{\aAgg}{\mathsf{A}}
+\newcommand{\aE}{\aRat^{e}}
+\newcommand{\aFunc}{\mathrm{a}}
+\newcommand{\aLevBF}{\mathbf{a}}
+\newcommand{\aLev}{a}
+\newcommand{\aMin}{\underline{\aRat}}
+\newcommand{\aRat}{a}
+\newcommand{\aSS}{\ensuremath{a}}
+\newcommand{\aTarg}{\check{a}}
+\newcommand{\aboveMin}{\blacktriangle}
+\newcommand{\adjPar}{\omega}
+\newcommand{\adj}{\mathrm{j}}
+\newcommand{\age}{z}
+\newcommand{\aggrSavingRuleCoeff}{\kappa}
+\newcommand{\bE}{\bRat^{e}}
+\newcommand{\bLevBF}{\mathbf{b}}
+\newcommand{\bLevE}{\bLev^{e}}
+\newcommand{\bLevU}{\bLev^{u}}
+\newcommand{\bLev}{b}
+\newcommand{\bMin}{\underline{\bRat}}
+\newcommand{\bRatE}{b^{e}}
+\newcommand{\bRatU}{b^{u}}
+\newcommand{\bRat}{b}
+\newcommand{\bTargE}{\check{b}^{e}}
+\newcommand{\bTargTarg}{\Target{\Target{\bRat}}}
+\newcommand{\bTarg}{\check{b}}
+\newcommand{\bU}{{b}^{u}}
+\newcommand{\bi}{}
+\newcommand{\cAgg}{\pmb{C}}
+\newcommand{\cEndFunc}{\mathfrak{c}}
+\newcommand{\cEss}{{c}^{e}}
+\newcommand{\cE}{\cRat^{e}}
+\newcommand{\cFuncAbove}{\bar{\mathrm{c}}}
+\newcommand{\cFuncBelow}{\uline{\mathrm{c}}}
+\newcommand{\cFuncLev}{\textbf{c}}  % end input ./Revision/Notation.tex
+\newcommand{\cFuncMax}{\bar{\bar{\mathrm{c}}}}
+\newcommand{\cFunc}{\mathrm{c}}
+\newcommand{\cGroPF}{\lambda}
+\newcommand{\cLevBF}{\mathbf{c}}
+\newcommand{\cLevE}{\cLev^{e}}
+\newcommand{\cLevFunc}{\pmb{\cFunc}}
+\newcommand{\cLevU}{\cLev^{u}}
+\newcommand{\cLev}{c}
+\newcommand{\cPDVFunc}{\mathbb{C}}
+\newcommand{\cPPP}{\cons^{\prime\prime\prime}}
+\newcommand{\cPP}{\cons^{\prime\prime}}
+\newcommand{\cP}{\cons^{\prime}}
+\newcommand{\cRatBF}{\pmb{c}}
+\newcommand{\cRatE}{\cRat^{e}}
+\newcommand{\cRatU}{\cRat^{u}}
+\newcommand{\cRat}{c}
+\newcommand{\cTargE}{\Target{c}^{e}}
+\newcommand{\cTargTarg}{\Target{\Target{\cRat}}}
+\newcommand{\cTarg}{\Target{c}}
+\newcommand{\cU}{\cRat^{u}}
+\newcommand{\ccRat}{\mathsf{c}}
+\newcommand{\chiFunc}{\pmb{\chi}}
+\newcommand{\cons}{c}
+\newcommand{\corr}{\varrho} 
+\newcommand{\curr}{1}  % Permits a change of notation to T-1 and T, t and t+1, or whatever
+\newcommand{\dRat}{d}
+\newcommand{\debtLim}{\mathsf{d}}
+\newcommand{\debt}{d}
+\newcommand{\deprRte}{\delta} % New 
+\newcommand{\depr}{\delta}
+\newcommand{\discRte}{\omega}
+\newcommand{\divGro}{\mathsf{g}}
+\newcommand{\dvdnd}{d}
+\newcommand{\eFunc}{\mathrm{e}}
+\newcommand{\econtexBibMake}{\econtexRoot/texmf-local/tex/latex/econtexBibMake}
+\newcommand{\econtexBibStyle}{\econtexRoot/texmf-local/bibtex/bst/econtex}
+\newcommand{\econtexSetup}{\econtexRoot/texmf-local/tex/latex/econtexSetup}
+\newcommand{\econtexShortcuts}{\econtexRoot/texmf-local/tex/latex/econtexShortcuts}
+\newcommand{\econtex}{\econtexRoot/texmf-local/tex/latex/econtex}
+\newcommand{\edvdnd}{\grave{\dvdnd}}
+\newcommand{\effUnits}{X}
+\newcommand{\ei}{}
+\newcommand{\ek}{\lambda}
+\newcommand{\empGro}{\xi}
+\newcommand{\empState}{\xi} % employment state indicator variable 
+\newcommand{\eprem}{\phi} % log equity premium
+\newcommand{\eq}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations}
+\newcommand{\erate}{\cancel{\mho}}
+\newcommand{\error}{\epsilon}
+\newcommand{\err}{z}
+\newcommand{\expend}{\xi}
+\newcommand{\fDist}{\mathcal{f}}
+\newcommand{\fFunc}{\mathrm{f}}
+\newcommand{\fLev}{f}
+\newcommand{\fPP}{\mathrm{f}^{\prime\prime}}
+\newcommand{\fP}{\mathrm{f}^{\prime}}
+\newcommand{\fm}{frictionless-$\mathbf{m}$ }
+\newcommand{\gdpLev}{\pmb{p}}
+\newcommand{\gdpRat}{p}
+\newcommand{\govNW}{n}
+\newcommand{\govSpend}{x}
+\newcommand{\hEndMin}{\underline{\mathfrak{h}}}
+\newcommand{\hEnd}{\mathfrak{h}}
+\newcommand{\hFunc}{\mathrm{h}}
+\newcommand{\hLevBF}{\mathbf{h}}
+\newcommand{\hLev}{\pmb{h}}
+\newcommand{\hMin}{\underline{\h}}
+\newcommand{\hRat}{h}
+\newcommand{\habit}{h}
+\newcommand{\handoutBibMake}{\econtexRoot/texmf-local/tex/latex/handoutBibMake}
+\newcommand{\handoutBibStyle}{\econtexRoot/texmf-local/bibtex/bst/handout}
+\newcommand{\handoutSetup}{\econtexRoot/texmf-local/tex/latex/handoutSetup}
+\newcommand{\handoutShortcuts}{\econtexRoot/texmf-local/tex/latex/handoutShortcuts}
+\newcommand{\hours}{\mathfrak{h}}
+\newcommand{\h}{h}
+\newcommand{\iFunc}{\mathrm{i}}
+\newcommand{\iLev}{i}
+\newcommand{\iRat}{i}
+\newcommand{\ifDepr}{\ifthenelse{\boolean{Depreciation}}}
+\newcommand{\ifDoc}{\marginpar{\tiny{DocAndNodocVersions}}\emph}
+\newcommand{\ifExplain}{\ifthenelse{\boolean{ExtraExplain}}}
+\newcommand{\ifGG}{\ifthenelse{\boolean{Growth}}}  
+\newcommand{\ifZero}{\ifthenelse{\boolean{ZeroProb}}}
+\newcommand{\ifslides}{\ifthenelse{\boolean{Slides}}}
+\newcommand{\impg}{{\imath}_{\pGro}}
+\newcommand{\impr}{{\imath}_{\rfree}}
+\newcommand{\inc}{{y}}
+\newcommand{\inv}{{i}}
+\newcommand{\itc}{\zeta} 
+\newcommand{\jFunc}{\mathrm{j}}
+\newcommand{\kFunc}{\mathrm{k}}
+\newcommand{\kLevBF}{\mathbf{k}}
+\newcommand{\kLev}{k}
+\newcommand{\kPriceAfterITC}{\mathscr{P}}
+\newcommand{\kPrice}{\mathsf{P}}
+\newcommand{\kRat}{k}
+\newcommand{\kTargE}{\Target{k}^{e}}
+\newcommand{\kTarg}{\Target{k}}
+\newcommand{\kapRent}{\varkappa}
+\newcommand{\kapShare}{\alpha}
+\newcommand{\kap}{{k}}
+\newcommand{\lGro}{\lambda}
+\newcommand{\lLevBF}{\pmb{\ell}}
+\newcommand{\lLev}{\ell}
+\newcommand{\labShare}{\nu}
+\newcommand{\labor}{\ell} % 
+\newcommand{\leiShare}{\zeta} % 
+\newcommand{\leisure}{z} % 
+\newcommand{\mEss}{\check{m}^{e}}
+\newcommand{\mE}{\mRat^{e}}
+\newcommand{\mFunc}{\mathrm{m}}
+\newcommand{\mLevBF}{\mathbf{m}}
+\newcommand{\mLevE}{\mLev^{e}}
+\newcommand{\mLev}{m}
+\newcommand{\mRatE}{\mRat^{e}}
+\newcommand{\mRat}{m}
+\newcommand{\mSS}{\breve{m}}
+\newcommand{\mTarg}{\check{m}}
+\newcommand{\mU}{{m}^{u}}
+\newcommand{\nFunc}{\mathrm{n}}
+\newcommand{\nIter}{n}
+\newcommand{\nLev}{n}
+\newcommand{\nRat}{n}
+\newcommand{\notes}{\econtexRoot/texmf-local/tex/latex/handout}
+\newcommand{\oLevBF}{\mathbf{o}}
+\newcommand{\oLev}{\pmb{o}}
+\newcommand{\oRat}{o}
+\newcommand{\pDeadRate}{\grave{\cancel{\mathsf{d}}}}
+\newcommand{\pDead}{\mathfrak{D}}
+\newcommand{\pDieRate}{\grave{\mathsf{d}}}
+\newcommand{\pDies}{\mathrm{d}} % Continuous time death rate 
+\newcommand{\pGroAdj}{\underline{\pGro}}
+\newcommand{\pGrouAdj}{\underline{\underline{{\pGro}}}}
+\newcommand{\pGro}{\gamma}
+\newcommand{\pLevBF}{\mathbf{p}}
+\newcommand{\pLev}{\pmb{p}}
+\newcommand{\pLives}{\cancel{\pDies}}
+\newcommand{\pNotZero}{\cancel{\wp}}
+\newcommand{\pPDVFunc}{\mathbb{P}}
+\newcommand{\pRat}{p}
+\newcommand{\pSav}{\phi}
+\newcommand{\pShkMin}{\underline{\psi}} % 
+\newcommand{\pShk}{\psi} % 
+\newcommand{\pZero}{\wp}
+\newcommand{\patpGroAdj}{\text{\thorn}_{\acute{\pGro}}}
+\newcommand{\patpGrohat}{\hat{\text{\thorn}}_{\pGro}}
+\newcommand{\patpGro}{\text{\thorn}_{\pGro}}
+\newcommand{\patr}{\text{\thorn}_{\rfree}}
+\newcommand{\patu}{\text{\thorn}_{\urate}}
+\newcommand{\patwGro}{\text{\thorn}_{\wGro}}
+\newcommand{\pat}{\text{\thorn}}
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\perc}[1]{\widetilde{#1}}
+\newcommand{\permShkInd}{\psi} % New
+\newcommand{\permShk}{\psi} % New
+\newcommand{\phiFunc}{\digamma}
+\newcommand{\popE}{e}
+\newcommand{\popGro}{\xi}
+\newcommand{\popRte}{\popGro}
+\newcommand{\power}{\eta}
+\newcommand{\prodFunc}{\mathrm{f}}
+\newcommand{\prudEx}{\omega}
+\newcommand{\prud}{\eta}
+\newcommand{\pshk}{\psi} % 
+\newcommand{\ptyGro}{\phi}
+\newcommand{\ptyLab}{z} % usually, log of \PtyLab
+\newcommand{\ptyLev}{a} % Usually, log of \PtyLev
+\newcommand{\q}{\koppa}
+\newcommand{\rGross}{\breve{\mathsf{r}}}
+\newcommand{\rIn}{r}
+\newcommand{\rProd}{\mathsf{r}}
+\newcommand{\rboro}{\bar{\rfree}}
+\newcommand{\recm}{}
+\newcommand{\reqd}{}
+\newcommand{\revFunc}{\pmb{\pi}}
+\newcommand{\rev}{\pi}
+\newcommand{\rfree}{\mathsf{r}}   % The net return on the safe asset at an annual rate
+\newcommand{\riskyAlt}{\pmb{\mathfrak{r}}}  % The net return on the risky asset annual rate
+\newcommand{\riskyshare}{\varsigma}
+\newcommand{\risky}{\mathbf{r}}  % The net return on the risky asset annual rate 
+\newcommand{\rnormwGro}{\mathit{r}_{\wGro}}    % Normalized version of riskless rate of return
+\newcommand{\rnorm}{\mathit{r}}    % Normalized version of riskless rate of return
+\newcommand{\rport}{\mathbbmss{r}}  
+\newcommand{\rprod}{\mathscr{r}}
+\newcommand{\rsave}{\ushort{\rfree}}
+\newcommand{\sE}{\sRat^{e}}
+\newcommand{\sFunc}{\mathrm{s}}
+\newcommand{\sLevBF}{\mathbf{s}}
+\newcommand{\sLevE}{\sLev^{e}}
+\newcommand{\sLevU}{\sLev^{u}}
+\newcommand{\sLev}{s}
+\newcommand{\sRatE}{\sRat^{e}}
+\newcommand{\sRatU}{\sRat^{u}}
+\newcommand{\sRat}{s}
+\newcommand{\sTargE}{\Target{\sRat}^{\null}}
+\newcommand{\sTargTarg}{\Target{\Target{\sRat}}}
+\newcommand{\sTarg}{\Target{\sRat}}
+\newcommand{\sU}{\sRat^{u}}
+\newcommand{\saveRate}{\grave{s}} % saving (income minus consumption) over income
+\newcommand{\save}{s} % saving (income minus consumption) 
+\newcommand{\sdr}{\mRat} % Stochastic Discount rate
+\newcommand{\seniority}{\mathsf{x}}
+\newcommand{\shk}{\phi}
+\newcommand{\sm}{sticky-$\mathbf{m}$ }
+\newcommand{\srate}{\varsigma}
+\newcommand{\stnRatio}{\tau}
+\newcommand{\stocks}{{s}}
+\newcommand{\straight}{\Pi}
+\newcommand{\surplus}{z}
+\newcommand{\tBak}{\pmb{n}}
+\newcommand{\tFwd}{n}
+\newcommand{\tHorOfm}{\pmb{n}}
+\newcommand{\tHor}{\mathsf{n}}
+\newcommand{\tNow}{t}
+\newcommand{\tSS}{t}
+\newcommand{\tShkAll}{\xi} % 
+\newcommand{\tShkEmpMin}{\underline{\theta}} % 
+\newcommand{\tShkEmp}{\theta} % 
+\newcommand{\tShk}{\xi} % 
+\newcommand{\tThen}{\tau}
+\newcommand{\taxDep}{\partial}
+\newcommand{\taxNetTrans}{z}
+\newcommand{\tax}{\tau}
+\newcommand{\texname}{cAndCwithStickyE}
+\newcommand{\timeRate}{\vartheta}
+\newcommand{\tinyAmount}{\epsilon}
+\newcommand{\tranShkInd}{\theta} % New
+\newcommand{\tshk}{\xi} % 
+\newcommand{\uFunc}{{\mathrm{u}}}
+\newcommand{\uInvEpShkuInv}{\underline{\underline{\psi}}}
+\newcommand{\uLev}{u}
+\newcommand{\uPDVFunc}{\mathbb{U}}
+\newcommand{\uPPP}{{\mathrm{u}^{\prime\prime\prime}}}
+\newcommand{\uPP}{{\mathrm{u}^{\prime\prime}}}
+\newcommand{\uPmt}{\mu}
+\newcommand{\uP}{{\mathrm{u}^{\prime}}}
+\newcommand{\unins}{\zeta}
+\newcommand{\urate}{\mho}
+\newcommand{\utilFunc}{\mathrm{u}}
+\newcommand{\util}{u}
+\newcommand{\vEndFunc}{\mathfrak{v}}
+\newcommand{\vEnd}{\mathfrak{v}} % end-of-period value function
+\newcommand{\vEss}{\check{v}^{e}}
+\newcommand{\vE}{{v}^{e}}
+\newcommand{\vFirm}{\mathrm{e}}
+\newcommand{\vFunc}{\mathrm{v}}
+\newcommand{\vInv}{\scriptstyle \Lambda \displaystyle}
+\newcommand{\vLevBF}{\mathbf{v}}
+\newcommand{\vLevFunc}{\pmb{\mathrm{v}}}
+\newcommand{\vLev}{v}
+\newcommand{\vNorm}{\mathrm{w}} % end-of-period value function
+\newcommand{\vNum}{v}
+\newcommand{\vOptAlt}{\Alt{\tilde{\mathfrak{v}}}}
+\newcommand{\vOpt}{\tilde{\mathfrak{v}}}
+\newcommand{\vRat}{v}
+\newcommand{\vTarg}{\Target{\vRat}}
+\newcommand{\vU}{{v}^{u}}
+\newcommand{\valfn}{\mathrm{v}} % middle-of-period value function
+\newcommand{\vk}{\lambda}
+\newcommand{\wAllLev}{\mathbf{o}}
+\newcommand{\wAllRat}{o}
+\newcommand{\wAll}{{o}}
+\newcommand{\wBeg}{\kLev} % wealth as of the beginning of the period (before R is received, not including Y)
+\newcommand{\wEndRat}{\aRat} % 
+\newcommand{\wEnd}{\aLev} % wealth as of the end of the period (after C has been taken)
+\newcommand{\wFunc}{\mathrm{w}}
+\newcommand{\wGro}{\mathsf{g}}
+\newcommand{\wHum}{\hLev} % human wealth -- individual
+\newcommand{\wLev}{\pmb{w}}
+\newcommand{\wMid}{\bLev} % wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\wMkt}{\mLev} % wealth as of the middle of the period (after R is received, including Y)
+\newcommand{\wNet}{x} % 
+\newcommand{\wPre}{{k}}
+\newcommand{\wRat}{o} % 
+\newcommand{\wTot}{\mathbf{o}} % 
+\newcommand{\wage}{\mathsf{w}}
+\newcommand{\wealth}{o}
+\newcommand{\weight}{\omega}
+\newcommand{\wend}{\aRat} % wealth as of the end of the period (after C has been taken)
+\newcommand{\whumMin}{\underline{\hRat}} % human wealth -- individual
+\newcommand{\whum}{\hRat} % human wealth -- individual
+\newcommand{\wmid}{\bRat} % wealth as of the middle of the period (after R is received, not including Y)
+\newcommand{\wmkt}{\mLev} % wealth as of the middle of the period (after R is received, including Y)
+\newcommand{\wtot}{o} % 
+\newcommand{\xFer}{\chi}
+\newcommand{\xFunc}{\mathrm{x}}
+\newcommand{\xLev}{x}
+\newcommand{\xRat}{x}
+\newcommand{\xpend}{\xi}
+\newcommand{\xperGro}{\mathsf{x}}
+\newcommand{\yFunc}{\mathrm{y}}
+\newcommand{\yLevBF}{\mathbf{y}}
+\newcommand{\yLev}{y}
+\newcommand{\yRat}{y}
+\newcommand{\yTargE}{\check{y}^{e}}
+\newcommand{\yTarg}{\check{y}}
+\newcommand{\zAgg}{\pmb{Z}}
+\newcommand{\zFunc}{\mathrm{z}}
+\newcommand{\zLevBF}{\pmb{z}}
+\newcommand{\zLev}{z}
+\newcommand{\zRat}{z}
+\renewcommand{\DeprFac}{(1-\delta)}
+\renewcommand{\PDies}{\mathrm{d}}
+\renewcommand{\PLives}{(1-\mathrm{d})}
+\renewcommand{\bi}{\begin{itemize}}
+\renewcommand{\ei}{\end{itemize}}
+\renewcommand{\pDies}{\mathsf{d}}
+\renewcommand{\recm}{\item[\phantom{$^{*}$}]}
+\renewcommand{\reqd}{\item[$^{*}$]}

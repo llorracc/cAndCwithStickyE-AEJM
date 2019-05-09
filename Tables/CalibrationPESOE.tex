@@ -1,0 +1,13 @@
+% Change these in Calibration/makeParameters.command
+\ifthenelse{\boolean{Slides}}{\\}{\\ } \\ \hline \multicolumn{4}{c}{Partial Equilibrium/Small Open Economy (PE/SOE) Model Parameters} 
+\\ \hline
+   \multicolumn{4}{l}{Calibrated Parameters} \\
+\\ & $\sigma_{\vec{\psi}}^{2}$      & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/varlpShkIndAnn.tex     & Variance Annual Perm Idiosyncratic Shocks (PSID)
+\\ & $\sigma_{\vec{\theta}}^{2}$    & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/varltShkIndAnn.tex     & Variance Annual Tran Idiosyncratic Shocks (PSID)
+\\ & $\wp$                    & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/zeroProb.tex           & Quarterly Probability of Unemployment Spell
+\\ & $\Pi$                    & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/Pi.tex                 & Quarterly Probability of Updating Expectations
+\\ & $(1-\Omega)$             & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/CapitalOmegaCancel.tex & Quarterly Probability of Mortality
+\\ \\ \multicolumn{4}{l}{Calculated Parameters} \\
+\\ & $\beta = \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/ImpatienceScaleFactor.tex \Omega / E[(\pmb{\psi})^{-\rho}]\RBet$ & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/BetaPESOE.tex & Satisfies Impatience Condition: $\beta < \Omega / E[(\Psi \psi)^{-\rho}]\RBet$
+\\ & $\sigma_{\psi}^{2}$      & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/varlpShkIndQtr.tex     & Variance Qtrly Perm Idiosyncratic Shocks (=$\sigma_{\vec{\psi}}/4$)
+\\ & $\sigma_{\theta}^{2}$    & \input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/varltShkIndQtr.tex     & Variance Qtrly Tran Idiosyncratic Shocks (=$4 \sigma_{\vec{\theta}}$)
