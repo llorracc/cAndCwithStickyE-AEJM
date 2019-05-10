@@ -1,5 +1,4 @@
 \documentclass[titlepage]{article}
-\usepackage{ifthen}
 \usepackage[econtex]{optional} %
 \newif\ifdvi\dvifalse
 
@@ -8,7 +7,6 @@
 }
 
 \usepackage{mathrsfs}
-\usepackage{tabularx}
 
 \def\std{\operatorname{std}} %
 \DeclareMathOperator{\Ex}{\mathbb{E}} %
@@ -19,17 +17,8 @@
 \usepackage{alias-private}
 \usepackage[nolists,nomarkers,tablesonly]{endfloat}
 \setcounter{secnumdepth}{4}
- \usepackage{xr}
+
 \externaldocument{cAndCwithStickyE-App} 
-
-\provideboolean{ifWeb}
-\setboolean{ifWeb}{false}
-
-\ifthenelse{\boolean{ifWeb}}{\usepackage{grfext}
-  \PrependGraphicsExtensions*{.svg,.jpg,.JPG,.png,.PNG,.pdf,.PDF}
-  \usepackage{endnotes}
-  \let\footnote=\endnote
-}{}
 
 \hypersetup{pdfauthor={Christopher Carroll <ccarroll@jhu.edu>, Edmund Crawley <ecrawle2@jhu.edu>, Jiri Slacalek <jiri.slacalek@ecb.europa.eu>, Kiichi Tokuoka <kiichi.tokuoka@mof.go.jp>, Matthew N White <mnwecon@udel.edu>},
             pdftitle={Sticky Expectations and Consumption Dynamics},

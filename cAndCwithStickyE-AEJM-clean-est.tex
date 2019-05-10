@@ -1,15 +1,12 @@
 \documentclass[titlepage]{article}
-\usepackage{ifthen}
 \usepackage[econtex]{optional} % Enable the control of compilation using options passed on startup
 \newif\ifdvi\dvifalse
-%\@ifundefined{pdfoutput}{}{\ifnum\pdfoutput>0 \dvifalse\fi}
 
 \RequirePackage{afterpage   ,amsbsy      ,amsfonts    ,amsgen      ,amsmath     ,amsopn      ,amssymb     ,amstext     ,amsthm      ,array       ,atbegshi    ,atveryend   ,auxhook     ,babel       ,bbm         ,bigintcalc  ,bitset      ,bm          ,bookmark    ,booktabs    ,calc        ,cancel      ,chngpage    ,color       ,dcolumn        ,endnotes    ,etexcmds    ,eucal       ,fontenc     ,footmisc    ,gettitlestring,graphics    ,graphicx    ,grfext      ,hhline      ,hopatch     ,hycolor     ,hyperref    ,ifluatex    ,ifpdf       ,ifthen      ,ifvtex      ,ifxetex     ,infwarerr   ,intcalc     ,keyval      ,kvdefinekeys,kvoptions   ,kvsetkeys   ,latexsym    ,letltxmacro ,ltxcmds     ,manyfoot    ,moreverb    ,multicol    ,multirow    ,nameref          ,nccfoots    ,optional    ,pdfescape   ,pdftexcmds  ,perpage     ,psibycus    ,refcount    ,rerunfilecheck,scrbase     ,scrkbase    ,scrlfile    ,setspace    ,snapshot    ,threeparttable,tipa        ,tocbasic    ,trig        ,typearea    ,ulem        ,url         ,ushort      ,verbatim    ,wasysym     ,xcolor-patch,
   xr          
 }
 
 \usepackage{mathrsfs}
-\usepackage{tabularx}
 
 \def\std{\operatorname{std}} % standard deviation
 \DeclareMathOperator{\Ex}{\mathbb{E}} % Expectations operator 
@@ -17,22 +14,11 @@
 \def\cov{\operatorname{cov}} % covariance
 \RequirePackage[authoryear]{natbib}
 
-%\usepackage{econtexSetup}
 \usepackage{alias-private}
 \usepackage[nolists,nomarkers,tablesonly]{endfloat}
 \setcounter{secnumdepth}{4}
-% start input ./Revision/Notation.tex
- \usepackage{xr}
+
 \externaldocument{cAndCwithStickyE-App} 
-
-\provideboolean{ifWeb}
-\setboolean{ifWeb}{false}
-
-\ifthenelse{\boolean{ifWeb}}{\usepackage{grfext}
-  \PrependGraphicsExtensions*{.svg,.jpg,.JPG,.png,.PNG,.pdf,.PDF}
-  \usepackage{endnotes}
-  \let\footnote=\endnote
-}{}
 
 \hypersetup{pdfauthor={Christopher Carroll <ccarroll@jhu.edu>, Edmund Crawley <ecrawle2@jhu.edu>, Jiri Slacalek <jiri.slacalek@ecb.europa.eu>, Kiichi Tokuoka <kiichi.tokuoka@mof.go.jp>, Matthew N White <mnwecon@udel.edu>},
             pdftitle={Sticky Expectations and Consumption Dynamics},

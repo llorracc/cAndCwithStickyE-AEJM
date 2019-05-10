@@ -314,6 +314,7 @@ latexmkrc
 _region_.*
 
 *.dep
+*.bib
 
 Calibration/MicroShkQtrVsAnn.bib
 Empirical/US/Results/LaTeX/AggCalibPermTransTemplate.bib
