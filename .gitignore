@@ -315,6 +315,8 @@ _region_.*
 
 *.dep
 *.bib
+*.4ct
+*.4tc
 
 Calibration/MicroShkQtrVsAnn.bib
 Empirical/US/Results/LaTeX/AggCalibPermTransTemplate.bib
