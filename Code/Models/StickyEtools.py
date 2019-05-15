@@ -422,7 +422,7 @@ def runStickyEregressionsInStata(infile_name,interval_size,meas_err,sticky,all_s
     # Run Stata do-file
     stata_status = subprocess.call(cmd,shell = 'true')
     if stata_status!=0:
-        raise ValueError('Stata code could not run. Check the stata_exe in StickyEparams.py')
+        raise ValueError('Stata code could not run. Check the stata_exe in USER_OPTIONS.py')
     stata_output = pd.read_csv(temp_name_full, sep=',',header=0)
 
     # Make results table and return it
@@ -761,20 +761,20 @@ def makeResultsPanel(Coeffs,StdErrs,Rsq,Pvals,OID,Counts,meas_err,sticky,all_spe
     # Add the rest of the specifications if requested
     if all_specs:
         # IV on lagged consumption growth
-        output += '\\\\ ' + mystr1(Coeffs[1]) + sigFunc(Coeffs[1],StdErrs[1]) + ' & & & IV & ' + mystr1(Rsq[1]) + ' & ' + mystr1(Pvals[1]) + '\n'
-        output += '\\\\ (' + mystr1(StdErrs[1]) + ') & & & & &' + mystr1(OID[1]) + '\n'
+        output += '\\\\ ' + mystr1(Coeffs[1]) + sigFunc(Coeffs[1],StdErrs[1]) + ' & & & IV & ' + mystr1(Rsq[1]) + ' & ' + mystr1(OID[1]) + '\n'
+        output += '\\\\ (' + mystr1(StdErrs[1]) + ') & & & & &' + mystr1(np.nan) + '\n'
 
         # IV on expected income growth
-        output += '\\\\ & ' + mystr1(Coeffs[2]) + sigFunc(Coeffs[2],StdErrs[2]) + ' & & IV & ' + mystr1(Rsq[2]) + ' & ' + mystr1(Pvals[2]) + '\n'
-        output += '\\\\ & (' + mystr1(StdErrs[2]) + ') & & & &' + mystr1(OID[2]) + '\n'
+        output += '\\\\ & ' + mystr1(Coeffs[2]) + sigFunc(Coeffs[2],StdErrs[2]) + ' & & IV & ' + mystr1(Rsq[2]) + ' & ' + mystr1(OID[2]) + '\n'
+        output += '\\\\ & (' + mystr1(StdErrs[2]) + ') & & & &' + mystr1(np.nan) + '\n'
 
         # IV on aggregate assets
-        output += '\\\\ & & ' + mystr2(Coeffs[3]) + sigFunc(Coeffs[3],StdErrs[3]) + ' & IV & ' + mystr1(Rsq[3]) + ' & ' + mystr1(Pvals[3]) + '\n'
-        output += '\\\\ & & (' + mystr2(StdErrs[3]) + ') & & &' + mystr1(OID[3]) + '\n'
+        output += '\\\\ & & ' + mystr2(Coeffs[3]) + sigFunc(Coeffs[3],StdErrs[3]) + ' & IV & ' + mystr1(Rsq[3]) + ' & ' + mystr1(OID[3]) + '\n'
+        output += '\\\\ & & (' + mystr2(StdErrs[3]) + ') & & &' + mystr1(np.nan) + '\n'
 
         # Horse race
-        output += '\\\\ ' + mystr1(Coeffs[4]) + sigFunc(Coeffs[4],StdErrs[4]) + ' & ' + mystr1(Coeffs[5]) + sigFunc(Coeffs[5],StdErrs[5]) + ' & ' + mystr2(Coeffs[6]) + sigFunc(Coeffs[6],StdErrs[6]) + ' & IV & ' + mystr1(Rsq[4]) + ' & ' + mystr1(Pvals[4]) + '\n'
-        output += '\\\\ (' + mystr1(StdErrs[4]) + ') & (' + mystr1(StdErrs[5]) + ') & (' + mystr2(StdErrs[6]) + ') & & & ' + mystr1(OID[4]) + '\n'
+        output += '\\\\ ' + mystr1(Coeffs[4]) + sigFunc(Coeffs[4],StdErrs[4]) + ' & ' + mystr1(Coeffs[5]) + sigFunc(Coeffs[5],StdErrs[5]) + ' & ' + mystr2(Coeffs[6]) + sigFunc(Coeffs[6],StdErrs[6]) + ' & IV & ' + mystr1(Rsq[4]) + ' & ' + mystr1(OID[4]) + '\n'
+        output += '\\\\ (' + mystr1(StdErrs[4]) + ') & (' + mystr1(StdErrs[5]) + ') & (' + mystr2(StdErrs[6]) + ') & & & ' + mystr1(np.nan) + '\n'
     output += memo
 
     if Counts[0] is not None and Counts[2] > 1 and False:
@@ -811,7 +811,8 @@ def makeResultsTable(caption,panels,counts,filename,label):
         note_size = '\\footnotesize'
     else:
         note_size = '\\tiny'
-    note = '\\multicolumn{6}{p{0.95\\textwidth}}{' + note_size + ' \\textbf{Notes:} '
+    note = '\\begin{flushleft}\n  '
+    note += note_size + ' \\textbf{Notes:} '
     if counts[1] > 1:
         note += 'Reported statistics are the average values for ' + str(counts[1]) + ' samples of ' + str(counts[0]) + ' simulated quarters each.  '
         #note += 'Bullets indicate that the average sample coefficient divided by average sample standard error is outside of the inner 90\%, 95\%, and 99\% of the standard normal distribution.  '
@@ -819,27 +820,32 @@ def makeResultsTable(caption,panels,counts,filename,label):
         note += 'Reported statistics are for a single simulation of ' + str(counts[0]) + ' quarters.  '
         #note += 'Stars indicate statistical significance at the 90\%, 95\%, and 99\% levels, respectively.  '
     note += 'Instruments $\\textbf{Z}_t = \\{\Delta \log \mathbf{C}_{t-2}, \Delta \log \mathbf{C}_{t-3}, \Delta \log \mathbf{Y}_{t-2}, \Delta \log \mathbf{Y}_{t-3}, A_{t-2}, A_{t-3}, \Delta_8 \log \mathbf{C}_{t-2}, \Delta_8 \log \mathbf{Y}_{t-2}   \\}$.'
-    note += '}'
+    note += '\\normalsize\n'
+    note += '\\end{flushleft}\n'
 
     if caption is not None:
         output = '\\begin{minipage}{\\textwidth}\n'
-        output += '\\begin{table} \caption{' + caption + '} \\label{' + label + '} \n'
+        output += '  \\begin{table}\n'
+        output += '    \\centering\n'
+        output += '    \caption{' + caption + '} \\label{' + label + '} \n'
         output += '  \\centerline{$ \Delta \log \mathbf{C}_{t+1} = \\varsigma + \chi \Delta \log \mathbf{C}_t + \eta \mathbb{E}_t[\Delta \log \mathbf{Y}_{t+1}] + \\alpha A_t + \epsilon_{t+1} $}\n'
     else:
         output = '\\begin{center} \n'
         output += '$ \Delta \log \mathbf{C}_{t+1} = \\varsigma + \chi \Delta \log \mathbf{C}_t + \eta \mathbb{E}_t[\Delta \log \mathbf{Y}_{t+1}] + \\alpha A_t + \epsilon_{t+1} $ \\\\  \n'
     output += '\\begin{tabular}{d{4}d{4}d{5}cd{4}c}\n \\toprule \n'
-    output += '\multicolumn{3}{c}{Expectations : Dep Var} & OLS &  \multicolumn{1}{c}{2${}^{\\text{nd}}$ Stage}  &  \multicolumn{1}{c}{KP $p$-val} \n'
-    output += '\\\\ \multicolumn{3}{c}{Independent Variables} & or IV & \multicolumn{1}{c}{$\\bar{R}^{2} $} & \multicolumn{1}{c}{Hansen J $p$-val} \n'
+    output += '\multicolumn{3}{c}{Expectations : Dep Var} & OLS &  \multicolumn{1}{c}{2${}^{\\text{nd}}$ Stage}  &  \multicolumn{1}{c}{Hansen J } \n'
+    output += '\\\\ \multicolumn{3}{c}{Independent Variables} & or IV & \multicolumn{1}{c}{$\\bar{R}^{2} $} & \multicolumn{1}{c}{$p$-val} \n'
 
     for panel in panels:
         output += panel
 
-    output += '\\\\ \\bottomrule \n ' + note + '\n'
-    output += '\end{tabular}\n'
+    output += '\\\\ \\bottomrule \n'  
+    output += '\\end{tabular}\n'
+    output += note + '\n'
 
     if caption is not None:
         output += '\end{table}\n'
+        output += '\\medskip\\medskip\n'
         output += '\end{minipage}\n'
     else:
         output += '\end{center}\n'
@@ -899,9 +905,10 @@ def makeParameterTable(filename, params):
 
     # Make full parameter table for paper
     paper_output = "\provideboolean{Slides} \setboolean{Slides}{false}  \n"
-
+    paper_output += "\\hypertarget{Calibration}{}\n"
     paper_output += "\\begin{minipage}{\\textwidth}\n"
-    paper_output += "  \\begin{table}\\hypertarget{Calibration}{}\n"
+    paper_output += "  \\begin{table}\n"
+    paper_output += "    \\centering\n"
     paper_output += "    \\caption{Calibration}\label{table:calibration}\n"
 
     paper_output += "\\begin{tabular}{cd{5}l}  \n"
@@ -1034,7 +1041,10 @@ def makeEquilibriumTable(out_filename, four_in_files, CRRA):
     paper_bot += "\ifthenelse{\\boolean{StandAlone}}{\\newlength\TableWidth}{}  \n"
     paper_bot += "\settowidth\TableWidth{\\usebox{\EqbmBox}} % Calculate width of table so notes will match  \n"
     paper_bot += "\medskip\medskip \\vspace{0.0cm} \parbox{\TableWidth}{\\footnotesize\n"
-    paper_bot += "\\textbf{Notes}: The cost of stickiness is calculated as the proportion by which the permanent income of a newborn frictionless consumer would need to be reduced in order to achieve the same reduction of expected value associated with forcing them to become a sticky expectations consumer.}  \n"
+    paper_bot += "  \\begin{flushleft}\n"
+    paper_bot += "    \\textbf{Notes}: The cost of stickiness is calculated as the proportion by which the permanent income of a newborn frictionless consumer would need to be reduced in order to achieve the same reduction of expected value associated with forcing them to become a sticky expectations consumer.\n"
+    paper_bot += "  \\end{flushleft}\n"
+    paper_bot += "}\n"
     paper_bot += "\end{table}\n"
     paper_bot += "\end{minipage}\n"
     paper_bot += "\ifthenelse{\\boolean{StandAlone}}{\end{document}}{}  \n"
