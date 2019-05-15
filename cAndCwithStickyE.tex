@@ -406,6 +406,7 @@ Under the assumption that `newborns' have the population-average productivity le
 % JS05052019: Propose to drop this footnote
 %\footnote{The dynamics and steady state of the population variance of the idiosyncratic component of permanent income $\pRat$ are derived in online Appendix~\ref{appendix:pss}.  The variance will exist so long as $\PLives \Ex[\psi^{2}] < 1$, which imposes a loose restriction on the magnitude of the idiosyncratic permanent shocks.}
 Our earlier equation \eqref{eq:IndRandWalk} is thus adjusted to:%\footnote{The constant population size permits the analytical convenience of replacing the dying with newborns, but it is important to understand that there is no relationship between successive persons at the same location on the number line; this is not a dynastic model.}
+
 \begin{verbatimwrite}{/Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/pBlanchard.tex}
 \begin{equation*}  
 {p}_{t+1,i} =
@@ -509,6 +510,7 @@ This yields the normalized form of the problem, which has only $\mLev_{t,i}$ and
 Defining $\Rfree = \Rprod\big/\PLives$, the main requirement for this problem to have a useful solution is an impatience condition: %
 % JS05052019: Propose to drop this footnote
 %\footnote{Other parametric restrictions are also necessary, but for typical parameterizations are not likely to be binding; see \cite{BufferStockTheory} for details.  Note that the relevant interest factor is the within-period productivity of capital $\Rprod$ is the gross return adjusted for both of the influences, $\delta$ and $\PLives$, that intervene between the amount of assets with which the consumer ends period $t$ and the amount of productive capital owned by a survivor when capital income is received in period $t+1$.  }
+
 \begin{verbatimwrite}{/Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/impatience.tex}
 \begin{eqnarray*}
   \label{eq:impatience}
@@ -690,6 +692,7 @@ What is less clear is whether models in this class imply that any residual seria
 The model predicts that the relationship between $\Ex_{t}[\Delta \log \cLev_{t+1,i}]$ and $\aRat_{t,i}$ will be nonlinear and downward sloping, but theory does not imply any specific functional form.  We experimented with a number of ways of capturing the role of $\aRat_{t,i}$ but will spare the reader the unedifying discussion of those experiments because they all reached conclusions similar to those of a particularly simple case, inspired by the original analysis of \cite{zeldes:jpe}: We simply include a dummy variable that indicates whether last period's $\aRat_{t,i}$ is low.  Specifically, we define $\bar{a}_{t,i}$ as 0 if household $i$'s level of ${a}$ in period $t$ is in the bottom 1 percent of the distribution, and $\bar{a}_{t,i}=1$ otherwise.  (We could have chosen, say, 10 or 20 percent with qualitatively similar, though less quantitatively impressive, results). So, in data simulated from our SOE model, we estimate regressions of the form: %
 % JS05052019: Propose to drop this footnote
 %\footnote{Details of the simulation procedure are in online Appendix~\ref{appendix:Simulation}.}
+
 \begin{verbatimwrite}{/Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/CGrowCross.tex}
    \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
 \newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}

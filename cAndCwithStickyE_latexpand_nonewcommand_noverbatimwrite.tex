@@ -408,6 +408,8 @@ Infinitely-lived households with a productivity process like \eqref{eq:IndRandWa
 \end{equation*}
 We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\PDies = \int_{0}^{1} \pDies_{t,i}\,di$ (again using the notation that capital letters represent aggregate values).
 
+Under the assumption that `newborns' have the population-average productivity level of $1$, the population mean of the idiosyncratic component of permanent income is always $\int_{0}^{1} {p}_{t,i}di = 1$. Our earlier equation \eqref{eq:IndRandWalk} is thus adjusted to:
+
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/pBlanchard.tex
 \begin{equation*}  
 {p}_{t+1,i} =
@@ -499,6 +501,8 @@ Our assumption that the aggregate and idiosyncratic productivity levels both ref
 \end{eqnarray}
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/scaledv.tex
  
+Defining $\Rfree = \Rprod\big/\PLives$, the main requirement for this problem to have a useful solution is an impatience condition: 
+
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/impatience.tex
 \begin{eqnarray*}
   \label{eq:impatience}
@@ -725,6 +729,8 @@ But as the foregoing discussion suggests, the model says there is a much more di
 The same fundamental point holds for a model in which there is an explicit liquidity constraint (our model has no such constraint, but the precautionary motive induces something that looks like a `soft' liquidity constraint).  \cite{zeldes:jpe} pointed out long ago that the Euler equation on which the random walk proposition is based fails to hold for consumers who are liquidity constrained; if consumers with low levels of wealth (relative to their permanent income) are more likely to be constrained, then low wealth consumers will experience systematically faster consumption growth than otherwise-similar high-wealth consumers.  Zeldes found empirical evidence of such a pattern, as has a large subsequent literature.
 
 What is less clear is whether models in this class imply that any residual serial correlation will remain once the lagged level of assets has been controlled for.  In numerical models like ours, such quantitative questions can be answered only by numerically solving and simulating the model, which is what we do here.
+
+The model predicts that the relationship between $\Ex_{t}[\Delta \log \cLev_{t+1,i}]$ and $\aRat_{t,i}$ will be nonlinear and downward sloping, but theory does not imply any specific functional form.  We experimented with a number of ways of capturing the role of $\aRat_{t,i}$ but will spare the reader the unedifying discussion of those experiments because they all reached conclusions similar to those of a particularly simple case, inspired by the original analysis of \cite{zeldes:jpe}: We simply include a dummy variable that indicates whether last period's $\aRat_{t,i}$ is low.  Specifically, we define $\bar{a}_{t,i}$ as 0 if household $i$'s level of ${a}$ in period $t$ is in the bottom 1 percent of the distribution, and $\bar{a}_{t,i}=1$ otherwise.  (We could have chosen, say, 10 or 20 percent with qualitatively similar, though less quantitatively impressive, results). So, in data simulated from our SOE model, we estimate regressions of the form: 
 
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/CGrowCross.tex
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/CGrowCross.tex
