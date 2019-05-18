@@ -35,10 +35,11 @@
 
  
 
+\setcounter{secnumdepth}{2}
+\makeatletter
+\makeatother
+
 \begin{document}\bibliographystyle{./econtexBibStyle}
-
-\section{Introduction}\label{sec:introduction}
-
 
 \begin{figure}
   \centering
@@ -282,7 +283,7 @@ aggregate state $n$ periods ago perceives:
 \end{equation}
 That is, our assumed random walk in productivity growth means that the household believes that the aggregate productivity factor has remained at $\Phi_{t-n}$ for the past $n$ periods, and remains there today. For households who observed the true aggregate state this period, $n=0$ and thus \eqref{eq:PLevBelief} says that $\{\widetilde{P}_{t,i},\widetilde{\Phi}_{t,i}\} = \{P_t,\Phi_t\}$.
 
-Given their perception of the aggregate level of productivity, the household perceives that their overall permanent productivity level to be $\widetilde{\pmb{p}}_{t,i} = p_{t,i} \widetilde{P}_{t,i}$.
+Given their perception of the aggregate level of productivity, the household perceives their overall permanent productivity level to be $\widetilde{\pmb{p}}_{t,i} = p_{t,i} \widetilde{P}_{t,i}$.
 
 The behavior of a `sticky expectations' consumer thus differs from that of a frictionless consumer only to the extent that the `sticky expectations' consumer's perception of aggregate productivity is out of date.
 
@@ -299,7 +300,7 @@ Infinitely-lived households with a productivity process like \eqref{eq:IndRandWa
 \\    1 & \text{if consumer at location $i$ dies between $t$ and $t+1$}.
   \end{cases}
 \end{equation*}
-We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\mathrm{d} = \int_{0}^{1} \mathsf{d}_{t,i}\,di$ (again using the notation that capital letters represent aggregate values).
+We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\mathrm{d} = \int_{0}^{1} \mathsf{d}_{t,i}\,di$.
 
 Under the assumption that `newborns' have the population-average productivity level of $1$, the population mean of the idiosyncratic component of permanent income is always $\int_{0}^{1} {p}_{t,i}di = 1$. Our earlier equation \eqref{eq:IndRandWalk} is thus adjusted to:
 
@@ -312,7 +313,7 @@ Under the assumption that `newborns' have the population-average productivity le
   \end{cases}
 \end{equation*}
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/pBlanchard.tex
- There is no relationship between successive persons at the same location on the number line (this is not a dynastic model).
+ There is no relationship between replaced and replacing persons at the same location on the number line (this is not a dynastic model).
 
 
 
@@ -380,7 +381,7 @@ The household's problem in levels can be written in Bellman form as:\footnote{Su
 \begin{eqnarray*}
 \textbf{v}(\mathbf{m}_{t,i},p_{t,i},P_t,\Phi_t)  & = &  \max_{\mathbf{c}_{t,i}}  \big\{ {\mathrm{u}}(\mathbf{c}_{t,i}) + \beta \Ex_t \big[(1-\mathsf{d}_{t+1,i})\textbf{v}(\mathbf{m}_{t+1,i},p_{t+1,i},P_{t+1},\Phi_{t+1})\big] \big\}. \nonumber
 \end{eqnarray*}
-Our assumption that the aggregate and idiosyncratic productivity levels both reflect a combination of purely transitory and purely permanent components now permits us to make a transformation that considerably simplifies analysis and solution of the model: When the utility function is in the CRRA class, the problem can be simplified by dividing by $\pmb{p}_{t,i}^{1-\rho} = (p_{t,i}P_t)^{1-\rho}$ while converting to normalized variables as above (e.g., $m_{t,i}=\mathbf{m}_{t,i}/\pmb{p}_{t,i}$). This yields the normalized form of the problem, which has only $m_{t,i}$ and $\Phi_t$ as state variables:
+Our assumption that the aggregate and idiosyncratic productivity levels both reflect a combination of purely transitory and purely permanent components now permits us to make a transformation that considerably simplifies analysis and solution of the model: When the utility function is in the CRRA class, the Bellman problem can be simplified by dividing utility and value by $\pmb{p}_{t,i}^{1-\rho} = (p_{t,i}P_t)^{1-\rho}$ while converting to normalized variables as above (e.g., $m_{t,i}=\mathbf{m}_{t,i}/\pmb{p}_{t,i}$). This yields the normalized form of the problem, which has only $m_{t,i}$ and $\Phi_t$ as state variables:
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/scaledv.tex
 \begin{eqnarray}
     \mathrm{v}({m}_{t,i},\Phi_t) & = & \max_{c_{t,i}} ~ \big\{ {\mathrm{u}}(c_{t,i}) + (1-\mathrm{d}) \beta
@@ -446,14 +447,14 @@ Under the assumption that consumers treat their belief about the aggregate state
 
 Because households in our model never misperceive the \textit{level} of their own market resources ($\widetilde{\mathbf{m}}_{t,i}=\mathbf{m}_{t,i}$), they can never choose consumption that would violate the budget constraint.  Households observe both their level of income $\mathbf{y}_{t,i}$ and its idiosyncratic components $\theta_{t,i}$ and ${p}_{t,i}$. If they wanted to do so, households could therefore calculate the aggregate component $\Theta_{t}\times {P}_{t}$, which would correspond with the reports of a statistical agency; but they do \textit{not} observe $\Theta_{t}$ and ${P}_{t}$ separately (because, in our model as in reality, statistical agencies do not report these objects).
 
-Our assumption is simply that households with sticky expectations neither perceive nor attempt to extract an estimate of the decomposition of that aggregate state into transitory and permanent components.  Consumers' misperceptions of aggregate permanent income \textit{do} cause them to make systematic errors---but below we present calculations showing that for the value of $\Pi$ that we estimate, those errors have small utility costs.
+Our assumption is simply that households with sticky expectations neither perceive nor attempt to extract an estimate of the decomposition of the observed aggregate state into transitory and permanent components.  Consumers' misperceptions of aggregate permanent income \textit{do} cause them to make systematic errors---but, below, we present calculations showing that for the value of $\Pi$ that we estimate, those errors have small utility costs.
 
-The utility costs would be a bit smaller if consumers were to perform a certainty-equivalent signal extraction and behaved as though the signal-extracted estimate of the aggregate state is ``truth'' (that is, they ignore the fact that their estimate has an error term), but section~\ref{sec:Comparisons} analyzes the alternative model in which households perform such a signal extraction and shows that the dynamics of aggregate consumption under this assumption do not match the dynamics that are observed in the aggregate data.
+The utility costs would be still smaller if consumers were to perform a certainty-equivalent signal extraction and behaved as though the signal-extracted estimate of the aggregate state is ``truth'' (that is, they ignore the fact that their estimate has an error term), but section~\ref{sec:Comparisons} analyzes the alternative model in which households perform such a signal extraction and shows that the dynamics of aggregate consumption under this assumption do not match the dynamics that are observed in the aggregate data.
 
 \subsubsection{Alternative Beliefs About the Aggregate Income Process}
-A model in which households understand that their macroeconomic beliefs are out-of-date due to inattention and prudently change their behavior to account for the extent of their uncertainty at any given moment would be far more computationally costly to solve (adding several additional state variables).  This reflects the fact that the mathematically correct treatment of widening aggregate uncertainty is formidably difficult.  But if the benefits to consumers of keeping track of the consequences of their growing ignorance were large, we might feel that we had no choice but to go down that path.
+A model in which households understand that their macroeconomic beliefs are out-of-date due to inattention and prudently change their behavior to account for the extent of their uncertainty at any given moment would be far more computationally costly to solve (adding several additional state variables).  This reflects the fact that the mathematically correct treatment of widening aggregate uncertainty is formidably difficult.  If the benefits to consumers of keeping track of the consequences of their growing ignorance were large, we might feel that we had no choice but to go down that path.
 
-Consumers' motivation to take account of the widening of their uncertainty as the distance from the last update increases springs from the convexity of marginal utility with respect to larger shocks: Compared to experiencing four shocks of a given size, experiencing one shock that is four times is large is strictly worse.  The magnitude of the benefit to consumers from accounting correctly for their expanding aggregate uncertainty is related to the \textit{degree} to which the one big shock is worse than the four smaller shocks.
+Consumers' motivation to take account of the progressive widening of their uncertainty during nonupdating periods springs from the convexity of marginal utility with respect to larger shocks: Compared to experiencing four shocks of a given size, experiencing one shock that is four times is large is strictly worse.  The magnitude of the benefit to consumers from accounting correctly for their expanding aggregate uncertainty is related to the \textit{degree} to which the one big shock is worse than the four smaller shocks.
 
 To gauge that magnitude, we conducted an experiment.  In online Appendix~\ref{appendix:AltBelief}, we present a specification in which sticky expectations households optimize under the belief that aggregate shocks only arrive in one in four quarters, but with four times the variance of the quarterly shocks, matching approximately how they will actually \textit{perceive} the arrival of macroeconomic information; the consumption function and main results are virtually identical under these alternate beliefs, which makes us comfortable in not attempting the challenging task of computing the optimal behavior that takes into account the widening uncertainty about the aggregate state as the time since the last update increases.
 
@@ -472,11 +473,11 @@ In our calibration, the variance of the idiosyncratic permanent innovations at t
  $).  This is a point worth emphasizing: Idiosyncratic uncertainty is {\it approximately two orders of magnitude larger} than aggregate uncertainty.  While reasonable people could differ a bit from our calibration of either the aggregate or idiosyncratic risk, no plausible calibration of either magnitude will change the fundamental point that the aggregate component of risk is tiny compared to the idiosyncratic component.  This is why assuming that people do not pay close attention to the macroeconomic environment is plausible: It makes a negligible contribution to the total uncertainty they face.
 
 \subsubsection{Small Aggregate Shocks and Consumption Concavity}
-A reader who is persuaded of the general importance of precautionary motives and other causes of nonlinearity in the microeconomic consumption function might feel uneasy about our assumption that consumers act in what seems to be a `certainty equivalent' way with respect to aggregate shocks.  The prior paragraph explains why the consequences of this assumption are negligible: Misperception of the level of aggregate productivity is so small that the consumption function is \textit{approximately} linear over the span between the level of consumption that would be correct with full knowledge, and the level of consumption that the consumer actually chooses.  The global concavity of the consumption function (and the curvature of marginal utility), which are important for many other purposes, are of little consequence for errors small enough not to interact meaningfully with that nonlinearity.  The importance of this insight has recently been emphasized by \cite{bmpMITshocks}, who show that assuming that behavior is linear with respect to aggregate shocks has huge benefits for computation of the solution to heterogeneous agent economies, at little cost to microeconomic realism.
+A reader who is persuaded of the general importance of precautionary motives and other causes of nonlinearity in the microeconomic consumption function might feel uneasy about our assumption that consumers act in essentially a `certainty equivalent' way with respect to aggregate shocks.  The prior paragraph explains why the consequences of this assumption are negligible: Misperception of the level of aggregate productivity is so small that the consumption function is \textit{approximately} linear over the span between the level of consumption that would be correct with full knowledge, and the level of consumption that the consumer actually chooses.  The global concavity of the consumption function (and the curvature of marginal utility), which are important for many other purposes, are of little consequence for errors small enough not to interact meaningfully with that nonlinearity.  The importance of this insight has recently been emphasized by \cite{bmpMITshocks}, who show that assuming that behavior is linear with respect to aggregate shocks has huge benefits for computation of the solution to heterogeneous agent economies, at little cost to microeconomic realism.
 
 We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/UpdatePrb.tex
 0.25 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/UpdatePrb.tex
- $ per quarter, for several reasons.  First, this is the parameter value assumed for the speed of expectations updating by \cite{mrSlumps} in their analysis of the consequences of sticky expectations for inflation.  They argue that an average frequency of updating of once a year is intuitively plausible.  Second, \cite{carroll:epidemicinflQJE} estimates an empirical process for the adjustment process for household inflation expectations in which the point estimate of the corresponding parameter is 0.27 for inflation expectations and 0.32 for unemployment expectations; the similarity of these figures suggests 0.25 is a reasonable benchmark, and provides some insulation against the charge that the model is {\it ad hoc}: It is calibrated in a way that corresponds to estimates of the stickiness of expectations in a fundamentally different context.  Finally, empirical results presented below will also suggest a speed of updating for U.S.\ consumption dynamics of about 0.25 per quarter.
+ $ per quarter, for several reasons.  First, this is the parameter value assumed for the speed of expectations updating by \cite{mrSlumps} in their analysis of the consequences of sticky expectations for inflation.  They argue that an average frequency of updating of once a year is intuitively plausible.  Second, \cite{carroll:epidemicinflQJE} estimates an empirical process for the adjustment process for household inflation expectations in which the point estimate of the corresponding parameter is 0.27 for inflation expectations and 0.32 for unemployment expectations; the similarity of these figures suggests that the \cite{mrSlumps} calibration of 0.25 is a reasonable benchmark, and provides some insulation against the charge that the model is {\it ad hoc}: It is calibrated in a way that corresponds to estimates of the stickiness of expectations in a fundamentally different context.  Finally, empirical results presented below will also suggest a speed of updating for U.S.\ consumption dynamics of about 0.25 per quarter.
 
 \begin{minipage}{\textwidth}
   \begin{table}
@@ -517,7 +518,7 @@ We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Pa
 
 \section{Results}\label{sec:Results}
 
-The calibrated model can now be used to evaluate the effects of sticky expectations on consumption dynamics.  We begin this section with an empirical benchmark on U.S.\ data that will guide our investigation of the implications of the model.  We then demonstrate that simulated data from the sticky expectations models quantitatively and qualitatively reproduces the key patterns of aggregate and idiosyncratic consumption data.
+The calibrated model can now be used to evaluate the effects of sticky expectations on consumption dynamics.  We begin this section with an empirical benchmark using U.S.\ data that will guide our investigation of the implications of the model.  We then demonstrate that simulated data from the sticky expectations models quantitatively and qualitatively reproduces the key patterns of aggregate and idiosyncratic consumption data.
 
 \subsection{U.S.\ Empirical Benchmark}
 \label{sec:EmpBenchmark}
@@ -709,9 +710,9 @@ The model predicts that the relationship between $\Ex_{t}[\Delta \log c_{t+1,i}]
   \begin{table}
     \centering
     \caption{Micro Consumption Regression on Simulated Data} \label{table:CGrowCross}
-    \begin{eqnarray} 
-\Delta \log       \mathbf{c} _{t+1,i} & = & \alpha_{0} + \alpha_{1} \Delta \log       \mathbf{c} _{t,i} + \alpha_{2} \mathbf{e} _{t,i}[\Delta \log             \mathbf{y} _{t+1,i}] + \alpha_{3}            {     a }_{t,i}    \\    \nonumber %\\CGrowCrossBar \nonumber 
-    \end{eqnarray}
+    \begin{eqnarray*} 
+\Delta \log       \mathbf{c} _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \mathbf{c} _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \mathbf{y} _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.   \\    \nonumber %\\CGrowCrossBar \nonumber 
+    \end{eqnarray*}
 \begin{tabular}{cd{4}d{4}d{5}ccc}  
 \toprule  
 Model of     &                                &                                &                                 &                                       &                 \\  
@@ -901,7 +902,7 @@ A newborn in our model is willing to give up about 0.05 percent of his permanent
 
 Now that we have explained how to compute the cost of stickiness numerically, we can test our supposition in equation \eqref{eq:vApproxSticky} that the cost of stickiness might have a roughly inverse linear relationship to $\Pi$.  Figure~\ref{costOfStickiness} plots numerically computed willingness-to-pay $\omega$ for various values of $\Pi^{-1}$; the relationship is close to linear, as we speculated.
 
-Our preferred interpretation is not that households deliberately choose $\Pi$ optimally due to a cost of updating, but instead that $\Pi$ is exogenous and represents the speed with which macroeconomic news arrives ``for free'' from the news media.  This could explain why the parameter $0.25$ seems to work about equally well for inflation, unemployment expectations, and consumption -- all of them are informed by the same flow of free information. An objection to this interpretation is that a household who has not updated for several years would face a substantially larger loss from continuing to be oblivious and would eventually feel the need to deliberately look up some aggregate facts.  At the cost of a large computational and theoretical investment, we could modify the model to allow consumers to behave in this way, but it seems clear that the {\it ex ante} benefit would be extremely small, because the likelihood of being sufficiently out of date to make costly mistakes is negligible.  Intuitively, we can calculate that at any given moment, only 3 percent of households will have information that is more than 3 years out of date ($(1-\Pi)^{12} \approx 0.03$), of households will be in this position.  Furthermore, simple calculations show that if we change the simulations so that households always exogenously update after three years, this barely changes aggregate dynamics (the estimate of $\chi$ slightly increases from 0.660 to 0.667 in the small open economy model).
+Our preferred interpretation is not that households deliberately choose $\Pi$ optimally due to a cost of updating, but instead that $\Pi$ is exogenous and represents the speed with which macroeconomic news arrives ``for free'' from the news media.  This could explain why the parameter $0.25$ seems to work about equally well for inflation, unemployment expectations, and consumption -- all of them are informed by the same flow of free information. An objection to this interpretation is that a household who has not updated for several years would face a substantially larger loss from continuing to be oblivious and would eventually feel the need to deliberately look up some aggregate facts.  At the cost of a large computational and theoretical investment, we could modify the model to allow consumers to behave in this way, but it seems clear that the {\it ex ante} benefit would be extremely small, because the likelihood of being sufficiently out of date to make costly mistakes is negligible.  Intuitively, we can calculate that at any given moment, only 3 percent of households will have information that is more than 3 years out of date ($(1-\Pi)^{12} \approx 0.03$).  Furthermore, simple calculations show that if we change the simulations so that households always exogenously update after three years, this barely changes aggregate dynamics (the estimate of $\chi$ slightly increases from 0.660 to 0.667 in the small open economy model).
 
 % start input ./Highlighted/MuthLucasPischke.tex
 \section{Muth--Lucas--Pischke and \cite{reis:inattentive}} \label{sec:Comparisons}

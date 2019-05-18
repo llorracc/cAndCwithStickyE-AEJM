@@ -318,26 +318,24 @@ _region_.*
 *.4ct
 *.4tc
 
-Calibration/MicroShkQtrVsAnn.bib
-Empirical/US/Results/LaTeX/AggCalibPermTransTemplate.bib
-Empirical/US/Results/LaTeX/epiOfCbibJ.bib
-LaTeX/ExtraDerivations-Private/CostOfStickTheory.bib
-LaTeX/ExtraDerivations-Private/CostOfStickTheory.pdf
-LaTeX/ExtraDerivations-Private/ExtraDerivations.bib
-LaTeX/ExtraDerivations-Private/ExtraDerivations.pdf
-LaTeX/ExtraDerivations-Private/Muth.bib
-LaTeX/ExtraDerivations-Private/Muth.pdf
-LaTeX/ExtraDerivations-Private/NoteOnQuarterlyvsAnnualVariance.pdf
-Slides/cAndCwithStickyE-Slides.bib
-Slides/cAndCwithStickyE-Slides-Print.bib
-Slides/cAndCwithStickyE.bib
+# Calibration/MicroShkQtrVsAnn.bib
+# Empirical/US/Results/LaTeX/AggCalibPermTransTemplate.bib
+# Empirical/US/Results/LaTeX/epiOfCbibJ.bib
+# LaTeX/ExtraDerivations-Private/CostOfStickTheory.bib
+# LaTeX/ExtraDerivations-Private/CostOfStickTheory.pdf
+# LaTeX/ExtraDerivations-Private/ExtraDerivations.bib
+# LaTeX/ExtraDerivations-Private/ExtraDerivations.pdf
+# LaTeX/ExtraDerivations-Private/Muth.bib
+# LaTeX/ExtraDerivations-Private/Muth.pdf
+# LaTeX/ExtraDerivations-Private/NoteOnQuarterlyvsAnnualVariance.pdf
 cAndCwithStickyE.bib
-cAndCwithStickyE.pdf
+# cAndCwithStickyE.pdf
 cAndCwithStickyE-App.pdf
-Tables.pdf
+# Tables.pdf
 
 *.pyc
 .metadata-*
 *.4ct
 *.4tc
 *.xref
+# README.pdf
