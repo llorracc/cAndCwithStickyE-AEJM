@@ -99,7 +99,7 @@
 \jelclass{D83, D84, E21, E32}
 
 
-\date{May 18, 2019  \\ \medskip\medskip \large{Forthcoming, \textit{American Economic Journal: Macroeconomics}}}
+\date{May 20, 2019  \\ \medskip\medskip \large{Forthcoming, \textit{American Economic Journal: Macroeconomics}}}
 \maketitle
 
 \hypertarget{Abstract}{} \opt{JournalFormatting}{\doublespacing}
@@ -406,7 +406,7 @@ Infinitely-lived households with a productivity process like \eqref{eq:IndRandWa
 \\    1 & \text{if consumer at location $i$ dies between $t$ and $t+1$}.
   \end{cases}
 \end{equation*}
-We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\PDies = \int_{0}^{1} \pDies_{t,i}\,di$, while the proportion who do not die are denoted by $\PLives$.
+We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\PDies = \int_{0}^{1} \pDies_{t,i}\,di$.
 
 Under the assumption that `newborns' have the population-average productivity level of $1$, the population mean of the idiosyncratic component of permanent income is always $\int_{0}^{1} {p}_{t,i}di = 1$. Our earlier equation \eqref{eq:IndRandWalk} is thus adjusted to:
 
@@ -440,7 +440,7 @@ market resources minus consumption:
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/aDef.tex
  Next period's capital is determined from this period's assets via:
 \begin{eqnarray}
-\kLevBF_{t+1,i} & = & \pDies_{t+1,i} \cdot 0+ \pLives_{t+1,i}\aLevBF_{t,i} \big/\PLives \label{eq:ktp1icompact}
+\kLevBF_{t+1,i} & = & \pDies_{t+1,i} \cdot 0+ (1-\pDies_{t+1,i})\aLevBF_{t,i} \big/\PLives \label{eq:ktp1icompact}
 \ifslides{}{,}
 \end{eqnarray}
 where the first term represents `newborns' having zero assets, and the second term's division of $\aLevBF$ by the survival probability $\PLives$ reflects returns to survivors from the Blanchardian insurance scheme (financed by seizure of the estates of the proportion $\PDies$ who die).
@@ -463,7 +463,7 @@ is
   \LLevBF_{t} & = & \int_{0}^{1} \pmb{\ell}_{t,i}\,\text{d}i = \Theta_{t} {P}_{t}.
 \end{eqnarray*}
 
-Aggregate market resources can be written as per-capita resources of the survivors times their population mass $\PLives$ (for whom the threat of death has been canceled), plus per-capita resources of the newborns times their population mass $\PDies$:
+Aggregate market resources can be written as per-capita resources of the survivors times their population mass $\PLives$, plus per-capita resources of the newborns times their population mass $\PDies$: 
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/Mtp1.tex
 \begin{eqnarray}
   \MLevBF_{t} & = & \big(\overbrace{\ALevBF_{t-1} {\Rprod}_t/\PLives  + \Theta_{t} {P}_{t}\Wage}^{\text{per-capita $\mLevBF$ for survivors}}\big)\PLives+\overbrace{\Theta_{t} {P}_{t}\Wage_t}^{\text{per-capita $\mLevBF$ for newborns}} \PDies \nonumber \\
@@ -486,15 +486,15 @@ Because of the assumption of a small open economy, the frictionless consumer's s
 
 The household's problem in levels can be written in Bellman form as:\footnote{Subject to definitions \eqref{eq:AggRandWalk}, \eqref{eq:IndRandWalk}, \eqref{eq:ell}, \eqref{eq:mDef}, \eqref{eq:aDef} and \eqref{eq:ktp1icompact}.}
 \begin{eqnarray*}
-\textbf{v}(\mLevBF_{t,i},p_{t,i},P_t,\PtyGro_t)  & = &  \max_{\cLevBF_{t,i}}  \big\{ \uFunc(\cLevBF_{t,i}) + \beta \Ex_t \big[\pLives_{t,i}\textbf{v}(\mLevBF_{t+1,i},p_{t+1,i},P_{t+1},\PtyGro_{t+1})\big] \big\}. \nonumber
+  \textbf{v}(\mLevBF_{t,i},p_{t,i},P_t,\PtyGro_t)  & = &  \max_{\cLevBF_{t,i}}  \big\{ \uFunc(\cLevBF_{t,i}) + \beta \Ex_t \big[\pLives_{t+1,i}\textbf{v}(\mLevBF_{t+1,i},p_{t+1,i},P_{t+1},\PtyGro_{t+1})\big] \big\}. \nonumber
 \end{eqnarray*}
 Our assumption that the aggregate and idiosyncratic productivity levels both reflect a combination of purely transitory and purely permanent components now permits us to make a transformation that considerably simplifies analysis and solution of the model: When the utility function is in the CRRA class, the Bellman problem can be simplified by dividing utility and value by $\pLev_{t,i}^{1-\CRRA} = (p_{t,i}P_t)^{1-\CRRA}$ while converting to normalized variables as above (e.g., $\mLev_{t,i}=\mLevBF_{t,i}/\pLev_{t,i}$). This yields the normalized form of the problem, which has only $\mLev_{t,i}$ and $\PtyGro_t$ as state variables:
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/scaledv.tex
 \begin{eqnarray}
-    \vFunc({m}_{t,i},\PtyGro_t) & = & \max_{\cLev_{t,i}} ~ \phantom{\big\{} \uFunc(\cLev_{t,i}) + \PLives \beta
-    \Ex_{t}\big[ (\PtyGro_{t+1} \pmb{\psi}_{t+1,i})^{1-\CRRA}\vFunc(\mLev_{t+1,i},\PtyGro_{t+1})\big] \phantom{\big\}}
+    \vFunc({m}_{t,i},\PtyGro_t) & = & \max_{\cLev_{t,i}} ~ \big\{ \uFunc(\cLev_{t,i}) + \PLives \beta      \nonumber
+                                      \Ex_{t}\big[ (\PtyGro_{t+1} \pmb{\psi}_{t+1,i})^{1-\CRRA}\vFunc(\mLev_{t+1,i},\PtyGro_{t+1})\big] \big\}
     \label{eq:scaledv}
-\\  & \mbox{s.t.} & \nonumber
+\\  & \mbox{s.t.} &
 \\    \aLev_{t,i}   & = & \mLev_{t,i} - \cLev_{t,i}, \nonumber
 \\    \kLev_{t+1,i} & = & \aLev_{t,i} \big/( \PLives \PtyGro_{t+1} \pmb{\psi}_{t+1,i} ),  \nonumber
 \\    \mLev_{t+1,i} & = & \Rprod \kLev_{t+1,i} + \Wage \pmb{\theta}_{t+1,i}.  \nonumber
@@ -570,22 +570,22 @@ To gauge that magnitude, we conducted an experiment.  In online Appendix~\ref{ap
 
 The full set of parameters is presented in Table~\ref{table:calibration}.  We offer complete discussion of our calibration in online Appendix~\ref{app:Calibration}, but a few aspects warrant comment here.
 
-In the SOE model, we set a much lower value of $\beta$ ($ % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/betaSOE.tex
-0.97 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/betaSOE.tex
+In the SOE model, we set a much lower value of $\beta$ ($ % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/betaSOE.tex
+0.97 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/betaSOE.tex
  $) than would be expected given our calibrated return factor (${\Rprod} = 1.015$), resulting in agents with wealth holdings around the median observed in the data.  This reflects the recent literature finding that for purposes of capturing aggregate consumption dynamics it may be more important to match the behavior of the typical consumer rather than the behavior of the typical holder of a dollar of wealth (see, for example, \cite{opLiquidH2M}).  Readers who prefer a calibration matching \textit{mean} observed wealth can consult the online appendix for a closed economy general equilibrium model, in which we show that the main results still hold.
 
 We calibrated the process for trend aggregate productivity growth $\Phi$ to match measured U.S.\ productivity data.  A Markov process with eleven states ranging between $-3.0$ percent and $+3.0$ percent (annual), and in which the state changes on average every two quarters, allowed us to fit both the high frequency autocorrelation evidence cited above and the low-frequency component of productivity growth obtained, e.g., by \cite{sswNAIRU}, Figure~1.9 and \cite{fernald:disappointingRecovery}, Figure~10.
 
-In our calibration, the variance of the idiosyncratic permanent innovations at the quarterly frequency is about 100 times the variance of the aggregate permanent innovations ($4 \times $\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/PermShkAggVar.tex divided by $% start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/PermShkVarAnn.tex
-0.012 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/PermShkVarAnn.tex
+In our calibration, the variance of the idiosyncratic permanent innovations at the quarterly frequency is about 100 times the variance of the aggregate permanent innovations ($4 \times $\input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/PermShkAggVar.tex divided by $% start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/PermShkVarAnn.tex
+0.012 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/PermShkVarAnn.tex
  $).  This is a point worth emphasizing: Idiosyncratic uncertainty is {\it approximately two orders of magnitude larger} than aggregate uncertainty.  While reasonable people could differ a bit from our calibration of either the aggregate or idiosyncratic risk, no plausible calibration of either magnitude will change the fundamental point that the aggregate component of risk is tiny compared to the idiosyncratic component.  This is why assuming that people do not pay close attention to the macroeconomic environment is plausible: It makes a negligible contribution to the total uncertainty they face.
 
 \hypertarget{ConcavityAggImp}{}
 \subsubsection{Small Aggregate Shocks and Consumption Concavity}
 A reader who is persuaded of the general importance of precautionary motives and other causes of nonlinearity in the microeconomic consumption function might feel uneasy about our assumption that consumers act in essentially a `certainty equivalent' way with respect to aggregate shocks.  The prior paragraph explains why the consequences of this assumption are negligible: Misperception of the level of aggregate productivity is so small that the consumption function is \textit{approximately} linear over the span between the level of consumption that would be correct with full knowledge, and the level of consumption that the consumer actually chooses.  The global concavity of the consumption function (and the curvature of marginal utility), which are important for many other purposes, are of little consequence for errors small enough not to interact meaningfully with that nonlinearity.  The importance of this insight has recently been emphasized by \cite{bmpMITshocks}, who show that assuming that behavior is linear with respect to aggregate shocks has huge benefits for computation of the solution to heterogeneous agent economies, at little cost to microeconomic realism.
 
-We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/UpdatePrb.tex
-0.25 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/UpdatePrb.tex
+We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/UpdatePrb.tex
+0.25 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/UpdatePrb.tex
  $ per quarter, for several reasons.  First, this is the parameter value assumed for the speed of expectations updating by \cite{mrSlumps} in their analysis of the consequences of sticky expectations for inflation.  They argue that an average frequency of updating of once a year is intuitively plausible.  Second, \cite{carroll:epidemicinflQJE} estimates an empirical process for the adjustment process for household inflation expectations in which the point estimate of the corresponding parameter is 0.27 for inflation expectations and 0.32 for unemployment expectations; the similarity of these figures suggests that the \cite{mrSlumps} calibration of 0.25 is a reasonable benchmark, and provides some insulation against the charge that the model is {\it ad hoc}: It is calibrated in a way that corresponds to estimates of the stickiness of expectations in a fundamentally different context.  Finally, empirical results presented below will also suggest a speed of updating for U.S.\ consumption dynamics of about 0.25 per quarter.
 
 \input//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables/Calibration.tex
@@ -613,7 +613,7 @@ shows that the relationship between the normalized asset stock $A_{t}$ and the e
   \label{eq:RandomWalkAForm}
   \Delta \log \CLevBF_{t+1} & = & \varsigma+\alpha A_{t}+\mu X_{t}+\epsilon_{t+1}.
 \end{eqnarray*}
-This reformulation is convenient because the literatures on precautionary saving and liquidity constraints since at least \cite{zeldes:jpe,zeldesStochastic} have argued that the effects of capital market imperfections can be captured by incorporating a lagged measure of resources like $A_{t}$ in consumption growth regressions.
+This reformulation is convenient because the literatures on precautionary saving and liquidity constraints since at least \cite{zeldes:jpe} and \citeyear{zeldesStochastic} have argued that the effects of capital market imperfections can be captured by incorporating a lagged measure of resources like $A_{t}$ in consumption growth regressions.
 
 \cite{cmModel} famously proposed a modification of this model in which a proportion $\eta$ of income goes to rule-of-thumb consumers who spend $C=Y$ in every period.  They argued that $\eta$ can be estimated by incorporating the predictable component of income growth as an additional regressor.  Finally, \cite{dynanHabits} and \cite{som07} show that in standard habit formation models, the size of the habit formation parameter can be captured by including lagged consumption growth as a regressor.  These considerations lead to a benchmark specification of the form:
 \begin{eqnarray}

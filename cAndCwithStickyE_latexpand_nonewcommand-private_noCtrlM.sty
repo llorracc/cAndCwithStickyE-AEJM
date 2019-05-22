@@ -10,7 +10,10 @@
 \newcommand{\handoutBibStyle}{\econtexRoot/texmf-local/bibtex/bst/handout}
 \newcommand{\texname}{cAndCwithStickyE}
 \renewcommand{\DeprFac}{(1-\delta)}
-\renewcommand{\PDies}{\mathrm{D}}
+\renewcommand{\PDies}{\mathsf{D}}
+\renewcommand{\pDies}{\mathsf{d}}
+\renewcommand{\PLives}{(1-\mathsf{D})}
+\renewcommand{\pLives}{(1-\mathsf{d})}
 \newcommand{\cFuncLev}{\textbf{c}}  % end input ./Revision/Notation.tex
 \renewcommand{\pDies}{\mathsf{d}}
 \newcommand{\aggrSavingRuleCoeff}{\kappa}
@@ -31,7 +34,7 @@
 \newcommand{\EqnDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations}
 \newcommand{\fm}{frictionless-$\mathbf{m}$ }
 \newcommand{\sm}{sticky-$\mathbf{m}$ }
-\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters}
+\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration}
 \newcommand{\TablesDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables}
 \newcommand{\DirCampManVsStickyE}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Empirical/US/Results/LaTeX/tables}
 \newcommand{\perc}[1]{\widetilde{#1}}
@@ -42,10 +45,10 @@
 \renewcommand{\p@subsubsection}{\thesection.\thesubsection.}
 \newcommand{\TranShocktpOne }{\Theta_{t}}
 \newcommand{\TranShocktpOne }{\Theta_{t}}
-   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
-\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}
-   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
-\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}
+   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}}
+\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}}
+   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}}
+\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}}
  \newcommand{\PischkePi}{0.83}
 \newcommand{\PischkePiCancel}{0.17}
  \newcommand{\fromFile}{false}
@@ -66,7 +69,10 @@
 \newcommand{\handoutBibStyle}{\econtexRoot/texmf-local/bibtex/bst/handout}
 \newcommand{\texname}{cAndCwithStickyE}
 \renewcommand{\DeprFac}{(1-\delta)}
-\renewcommand{\PDies}{\mathrm{D}}
+\renewcommand{\PDies}{\mathsf{D}}
+\renewcommand{\pDies}{\mathsf{d}}
+\renewcommand{\PLives}{(1-\mathsf{D})}
+\renewcommand{\pLives}{(1-\mathsf{d})}
 \newcommand{\cFuncLev}{\textbf{c}}  % end input ./Revision/Notation.tex
 \renewcommand{\pDies}{\mathsf{d}}
 \newcommand{\aggrSavingRuleCoeff}{\kappa}
@@ -87,7 +93,7 @@
 \newcommand{\EqnDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations}
 \newcommand{\fm}{frictionless-$\mathbf{m}$ }
 \newcommand{\sm}{sticky-$\mathbf{m}$ }
-\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters}
+\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration}
 \newcommand{\TablesDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Tables}
 \newcommand{\DirCampManVsStickyE}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Empirical/US/Results/LaTeX/tables}
 \newcommand{\perc}[1]{\widetilde{#1}}
@@ -98,10 +104,10 @@
 \renewcommand{\p@subsubsection}{\thesection.\thesubsection.}
 \newcommand{\TranShocktpOne }{\Theta_{t}}
 \newcommand{\TranShocktpOne }{\Theta_{t}}
-   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
-\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}
-   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
-\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}
+   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}}
+\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}}
+   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}}
+\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}}
  \newcommand{\PischkePi}{0.83}
 \newcommand{\PischkePiCancel}{0.17}
  \newcommand{\fromFile}{false}
@@ -111,7 +117,10 @@
  \newcommand{\fromFile}{false}
  \newcommand{\FileOrNot}{\ifthenelse{\boolean{\fromFile}}}
 \renewcommand{\DeprFac}{(1-\delta)}
-\renewcommand{\PDies}{\mathrm{D}}
+\renewcommand{\PDies}{\mathsf{D}}
+\renewcommand{\pDies}{\mathsf{d}}
+\renewcommand{\PLives}{(1-\mathsf{D})}
+\renewcommand{\pLives}{(1-\mathsf{d})}
 \renewcommand{\pDies}{\mathsf{d}}
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\Alph{subsection}}

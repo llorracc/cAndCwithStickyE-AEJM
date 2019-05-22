@@ -1,5 +1,5 @@
 
-   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.}
+   \newcommand{\CGrowCross}{\Delta \log       \cLevBF _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \cLevBF _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \yLevBF _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}}
  \newcommand{\FileOrNot}{\ifthenelse{\boolean{\fromFile}}}
  \newcommand{\PischkePi}{0.83}
  \newcommand{\fromFile}{false}
@@ -41,7 +41,7 @@
 \newcommand{\CGroOverR}{\Phi}
 \newcommand{\CGroPF}{\Lambda}
 \newcommand{\CGroPS}{\chi}  % Precautionary Saving boost to consumption growth
-\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}.}
+\newcommand{\CGrowCrossBar}{\Delta \log  \perc{\cLevBF}_{t+1,i}  &=&  \varsigma + \chi \Delta \log \perc{\cLevBF}_{t,i} + \eta     {\Ex}_{t,i}[\Delta \log \perc{\yLevBF}_{t+1,i}] + {\alpha} {\perc{a}}_{t,i}+\epsilon_{t+1,i}}
 \newcommand{\CLevBF}{\mathbf{C}}
 \newcommand{\CLevE}{\CLev^{e}}
 \newcommand{\CLevU}{\CLev^{u}}
@@ -173,7 +173,7 @@
 \newcommand{\PPDV}{\text{PDV($P$)}}
 \newcommand{\PShk}{\Psi} % 
 \newcommand{\Pareto}{\zeta}
-\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters}
+\newcommand{\ParmDir}{//Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration}
 \newcommand{\PatPGroAdj}{\text{\pmb{\Thorn}}_{\acute{\PGro}}}
 \newcommand{\PatPGro}{\text{\pmb{\Thorn}}_{\PGro}}
 \newcommand{\PatR}{\text{\pmb{\Thorn}}_{\Rfree}}
@@ -480,7 +480,7 @@
 \newcommand{\pDeadRate}{\grave{\cancel{\mathsf{d}}}}
 \newcommand{\pDead}{\mathfrak{D}}
 \newcommand{\pDieRate}{\grave{\mathsf{d}}}
-\newcommand{\pDies}{\mathrm{d}} % Continuous time death rate 
+\newcommand{\pDies}{\mathsf{d}} % Continuous time death rate 
 \newcommand{\pGroAdj}{\underline{\pGro}}
 \newcommand{\pGrouAdj}{\underline{\underline{{\pGro}}}}
 \newcommand{\pGro}{\gamma}
@@ -652,12 +652,15 @@
 \newcommand{\zLev}{z}
 \newcommand{\zRat}{z}
 \renewcommand{\DeprFac}{(1-\delta)}
-\renewcommand{\PDies}{\mathrm{D}}
+\renewcommand{\PDies}{\mathsf{D}}
+\renewcommand{\PLives}{(1-\mathsf{D})}
 \renewcommand{\bi}{\begin{itemize}}
 \renewcommand{\ei}{\end{itemize}}
 \renewcommand{\p@subsection}{\thesection.}
 \renewcommand{\p@subsubsection}{\thesection.\thesubsection.}
 \renewcommand{\pDies}{\mathsf{d}}
+\renewcommand{\pDies}{\mathsf{d}}
+\renewcommand{\pLives}{(1-\mathsf{d})}
 \renewcommand{\recm}{\item[\phantom{$^{*}$}]}
 \renewcommand{\reqd}{\item[$^{*}$]}
 \renewcommand{\thesection}{\Roman{section}}

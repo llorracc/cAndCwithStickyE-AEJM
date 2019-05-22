@@ -246,7 +246,7 @@ One of the lessons of the consumption literature after \cite{hallRandomWalk} is 
 
 Below, we present a model that will be used to simulate the economy under frictionless and sticky expectations.  We specify a small open economy (or partial equilibrium) model with a rich and empirically realistic calibration of idiosyncratic and aggregate risk but exogenous interest rates and wages. In the online appendix, we present two alternative closed economy (general equilibrium) models, along with simulation results analogous to those of section \ref{sec:Results}, replicating our findings in other settings.\footnote{In online Appendix \ref{sec:HADSGE}, we extend the SOE model to a heterogeneous agents dynamic stochastic general equilibrium (HA-DSGE) model that endogenizes factor returns at the cost of considerably more computation, which gives results substantially the same as the SOE model.  Online Appendix \ref{sec:RepAgent} presents a model that abstracts from idiosyncratic income risk (essentially, setting $\sigma^{2}_{\psi}=\sigma^{2}_{\theta}=0$), and which produces results similar to those of our `realistic' models.  The simplification enables general equilibrium analysis at a small fraction of the computational cost. However, it is neither a representative agent model---the distribution of beliefs must be tracked---nor a respectable heterogeneous agents model, which may reduce its appeal to both audiences.}
 
-In our model, a continuum of agents care about expected lifetime utility derived from CRRA preferences over a unitary consumption good; they geometrically discount future utility flows by discount factor $\beta$.  Agents inelastically supply one unit of labor, and their only decision in each period $t$ is how to divide their market resources $\mathbf{m}$ between consumption $\mathbf{c}$ and saving in a single asset $\mathbf{a}$.  We assume agents are \cite{blanchardFinite} ``perpetual youth'' consumers: They have a constant probability of death $\mathrm{D}$ between periods, and upon death they are immediately replaced, while their assets are distributed among surviving households in proportion to the recipient's wealth.
+In our model, a continuum of agents care about expected lifetime utility derived from CRRA preferences over a unitary consumption good; they geometrically discount future utility flows by discount factor $\beta$.  Agents inelastically supply one unit of labor, and their only decision in each period $t$ is how to divide their market resources $\mathbf{m}$ between consumption $\mathbf{c}$ and saving in a single asset $\mathbf{a}$.  We assume agents are \cite{blanchardFinite} ``perpetual youth'' consumers: They have a constant probability of death $\mathsf{D}$ between periods, and upon death they are immediately replaced, while their assets are distributed among surviving households in proportion to the recipient's wealth.
 
 \subsection{Output, Income, and Productivity}
 
@@ -328,7 +328,7 @@ When a household's perception of productivity $\widetilde{\pmb{p}}$ differs from
 
 \subsection{Transition Dynamics}
 
-Infinitely-lived households with a productivity process like \eqref{eq:IndRandWalk} would generate a nonergodic distribution of idiosyncratic productivity---as individuals accumulated ever more shocks to their permanent productivities, those productivities would spread out indefinitely across the population with time. To avoid this inconvenience, we make the \cite{blanchardFinite} assumption: Each consumer faces a constant probability of mortality of $\mathrm{D}$. We track death events using a binary indicator:
+Infinitely-lived households with a productivity process like \eqref{eq:IndRandWalk} would generate a nonergodic distribution of idiosyncratic productivity---as individuals accumulated ever more shocks to their permanent productivities, those productivities would spread out indefinitely across the population with time. To avoid this inconvenience, we make the \cite{blanchardFinite} assumption: Each consumer faces a constant probability of mortality of $\mathsf{D}$. We track death events using a binary indicator:
 \begin{equation*}
 \mathsf{d}_{t+1,i} =
   \begin{cases}
@@ -336,7 +336,7 @@ Infinitely-lived households with a productivity process like \eqref{eq:IndRandWa
 \\    1 & \text{if consumer at location $i$ dies between $t$ and $t+1$}.
   \end{cases}
 \end{equation*}
-We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\mathrm{D} = \int_{0}^{1} \mathsf{d}_{t,i}\,di$, while the proportion who do not die are denoted by $\cancel{\mathrm{D}}$.
+We refer to this henceforth as a `replacement' event, since the consumer who dies is replaced by an unrelated newborn who happens to inhabit the same location on the number line.  The {\it ex ante} probability of death is identical for each consumer, so that the aggregate mass of consumers who are replaced is time invariant at $\mathsf{D} = \int_{0}^{1} \mathsf{d}_{t,i}\,di$.
 
 Under the assumption that `newborns' have the population-average productivity level of $1$, the population mean of the idiosyncratic component of permanent income is always $\int_{0}^{1} {p}_{t,i}di = 1$. Our earlier equation \eqref{eq:IndRandWalk} is thus adjusted to:
 
@@ -370,10 +370,10 @@ market resources minus consumption:
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/aDef.tex
  Next period's capital is determined from this period's assets via:
 \begin{eqnarray}
-\mathbf{k}_{t+1,i} & = & \mathsf{d}_{t+1,i} \cdot 0+ \cancel{\mathsf{d}}_{t+1,i}\mathbf{a}_{t,i} \big/\cancel{\mathrm{D}} \label{eq:ktp1icompact}
+\mathbf{k}_{t+1,i} & = & \mathsf{d}_{t+1,i} \cdot 0+ (1-\mathsf{d}_{t+1,i})\mathbf{a}_{t,i} \big/(1-\mathsf{D}) \label{eq:ktp1icompact}
 \ifthenelse{\boolean{Slides}}{}{,}
 \end{eqnarray}
-where the first term represents `newborns' having zero assets, and the second term's division of $\mathbf{a}$ by the survival probability $\cancel{\mathrm{D}}$ reflects returns to survivors from the Blanchardian insurance scheme (financed by seizure of the estates of the proportion $\mathrm{D}$ who die).
+where the first term represents `newborns' having zero assets, and the second term's division of $\mathbf{a}$ by the survival probability $(1-\mathsf{D})$ reflects returns to survivors from the Blanchardian insurance scheme (financed by seizure of the estates of the proportion $\mathsf{D}$ who die).
 
 
 \subsection{Aggregation}
@@ -381,10 +381,10 @@ where the first term represents `newborns' having zero assets, and the second te
 The foregoing assumptions permit straightforward aggregation of individual-level variables.  Aggregate capital is the population integral of \eqref{eq:ktp1icompact}:
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/Ktp1.tex
 \begin{equation*}
-\mathbf{K}_{t} = \int_{0}^{1} \mathbf{k}_{t,i}\,\text{d}i = \int_{0}^{1} \big(\cancel{\mathsf{d}}_{t,i}\mathbf{a}_{t-1,i} \big/\cancel{\mathrm{D}}\, \big)\,\text{d}i = \int_{0}^{1} \mathbf{a}_{t-1,i}\,\text{d}i = \mathbf{A}_{t-1}.   \label{eq:Ktp1}
+\mathbf{K}_{t} = \int_{0}^{1} \mathbf{k}_{t,i}\,\text{d}i = \int_{0}^{1} \big((1-\mathsf{d})_{t,i}\mathbf{a}_{t-1,i} \big/(1-\mathsf{D})\, \big)\,\text{d}i = \int_{0}^{1} \mathbf{a}_{t-1,i}\,\text{d}i = \mathbf{A}_{t-1}.   \label{eq:Ktp1}
 \end{equation*}
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/Ktp1.tex
- The third equality holds because $\cancel{\mathrm{D}}^{-1}\int_{0}^{1}(1-\mathsf{d}_{t,i})\,\text{d}i = 1$
+ The third equality holds because $(1-\mathsf{D})^{-1}\int_{0}^{1}(1-\mathsf{d}_{t,i})\,\text{d}i = 1$
 since $\mathsf{d}_{t,i}$ is independent of $\mathbf{a}_{t-1,i}$.
 Because $\int_{0}^{1} \theta_{t,i} = \int_{0}^{1} {p}_{t,i} = 1,$ aggregate labor supply
 is
@@ -393,10 +393,10 @@ is
   \mathbf{L}_{t} & = & \int_{0}^{1} \pmb{\ell}_{t,i}\,\text{d}i = \Theta_{t} {P}_{t}.
 \end{eqnarray*}
 
-Aggregate market resources can be written as per-capita resources of the survivors times their population mass $\cancel{\mathrm{D}}$ (for whom the threat of death has been canceled), plus per-capita resources of the newborns times their population mass $\mathrm{D}$:
+Aggregate market resources can be written as per-capita resources of the survivors times their population mass $(1-\mathsf{D})$, plus per-capita resources of the newborns times their population mass $\mathsf{D}$: 
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/Mtp1.tex
 \begin{eqnarray}
-  \mathbf{M}_{t} & = & \big(\overbrace{\mathbf{A}_{t-1} {\mathscr{R}}_t/\cancel{\mathrm{D}}  + \Theta_{t} {P}_{t}\mathsf{W}}^{\text{per-capita $\mathbf{m}$ for survivors}}\big)\cancel{\mathrm{D}}+\overbrace{\Theta_{t} {P}_{t}\mathsf{W}_t}^{\text{per-capita $\mathbf{m}$ for newborns}} \mathrm{D} \nonumber \\
+  \mathbf{M}_{t} & = & \big(\overbrace{\mathbf{A}_{t-1} {\mathscr{R}}_t/(1-\mathsf{D})  + \Theta_{t} {P}_{t}\mathsf{W}}^{\text{per-capita $\mathbf{m}$ for survivors}}\big)(1-\mathsf{D})+\overbrace{\Theta_{t} {P}_{t}\mathsf{W}_t}^{\text{per-capita $\mathbf{m}$ for newborns}} \mathsf{D} \nonumber \\
                        & = & \mathbf{A}_{t-1} {\mathscr{R}}_t + \Theta_{t} P_t \mathsf{W}_t  \label{eq:Mtp1} \\
                        & = & \mathbf{K}_t \mathscr{R}_t + \mathbf{L}_t \mathsf{W}_t. \nonumber
 \end{eqnarray}
@@ -416,22 +416,22 @@ Because of the assumption of a small open economy, the frictionless consumer's s
 
 The household's problem in levels can be written in Bellman form as:\footnote{Subject to definitions \eqref{eq:AggRandWalk}, \eqref{eq:IndRandWalk}, \eqref{eq:ell}, \eqref{eq:mDef}, \eqref{eq:aDef} and \eqref{eq:ktp1icompact}.}
 \begin{eqnarray*}
-\textbf{v}(\mathbf{m}_{t,i},p_{t,i},P_t,\Phi_t)  & = &  \max_{\mathbf{c}_{t,i}}  \big\{ {\mathrm{u}}(\mathbf{c}_{t,i}) + \beta \Ex_t \big[\cancel{\mathsf{d}}_{t,i}\textbf{v}(\mathbf{m}_{t+1,i},p_{t+1,i},P_{t+1},\Phi_{t+1})\big] \big\}. \nonumber
+  \textbf{v}(\mathbf{m}_{t,i},p_{t,i},P_t,\Phi_t)  & = &  \max_{\mathbf{c}_{t,i}}  \big\{ {\mathrm{u}}(\mathbf{c}_{t,i}) + \beta \Ex_t \big[(1-\mathsf{d})_{t+1,i}\textbf{v}(\mathbf{m}_{t+1,i},p_{t+1,i},P_{t+1},\Phi_{t+1})\big] \big\}. \nonumber
 \end{eqnarray*}
 Our assumption that the aggregate and idiosyncratic productivity levels both reflect a combination of purely transitory and purely permanent components now permits us to make a transformation that considerably simplifies analysis and solution of the model: When the utility function is in the CRRA class, the Bellman problem can be simplified by dividing utility and value by $\pmb{p}_{t,i}^{1-\rho} = (p_{t,i}P_t)^{1-\rho}$ while converting to normalized variables as above (e.g., $m_{t,i}=\mathbf{m}_{t,i}/\pmb{p}_{t,i}$). This yields the normalized form of the problem, which has only $m_{t,i}$ and $\Phi_t$ as state variables:
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/scaledv.tex
 \begin{eqnarray}
-    \mathrm{v}({m}_{t,i},\Phi_t) & = & \max_{c_{t,i}} ~ \phantom{\big\{} {\mathrm{u}}(c_{t,i}) + \cancel{\mathrm{D}} \beta
-    \Ex_{t}\big[ (\Phi_{t+1} \pmb{\psi}_{t+1,i})^{1-\rho}\mathrm{v}(m_{t+1,i},\Phi_{t+1})\big] \phantom{\big\}}
+    \mathrm{v}({m}_{t,i},\Phi_t) & = & \max_{c_{t,i}} ~ \big\{ {\mathrm{u}}(c_{t,i}) + (1-\mathsf{D}) \beta      \nonumber
+                                      \Ex_{t}\big[ (\Phi_{t+1} \pmb{\psi}_{t+1,i})^{1-\rho}\mathrm{v}(m_{t+1,i},\Phi_{t+1})\big] \big\}
     \label{eq:scaledv}
-\\  & \mbox{s.t.} & \nonumber
+\\  & \mbox{s.t.} &
 \\    a_{t,i}   & = & m_{t,i} - c_{t,i}, \nonumber
-\\    k_{t+1,i} & = & a_{t,i} \big/( \cancel{\mathrm{D}} \Phi_{t+1} \pmb{\psi}_{t+1,i} ),  \nonumber
+\\    k_{t+1,i} & = & a_{t,i} \big/( (1-\mathsf{D}) \Phi_{t+1} \pmb{\psi}_{t+1,i} ),  \nonumber
 \\    m_{t+1,i} & = & \mathscr{R} k_{t+1,i} + \mathsf{W} \pmb{\theta}_{t+1,i}.  \nonumber
 \end{eqnarray}
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/scaledv.tex
  
-Defining $\mathsf{R} = \mathscr{R}\big/\cancel{\mathrm{D}}$, the main requirement for this problem to have a useful solution is an impatience condition: 
+Defining $\mathsf{R} = \mathscr{R}\big/(1-\mathsf{D})$, the main requirement for this problem to have a useful solution is an impatience condition: 
 
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/impatience.tex
 \begin{eqnarray*}
@@ -499,21 +499,21 @@ To gauge that magnitude, we conducted an experiment.  In online Appendix~\ref{ap
 
 The full set of parameters is presented in Table~\ref{table:calibration}.  We offer complete discussion of our calibration in online Appendix~\ref{app:Calibration}, but a few aspects warrant comment here.
 
-In the SOE model, we set a much lower value of $\beta$ ($ % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/betaSOE.tex
-0.97 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/betaSOE.tex
+In the SOE model, we set a much lower value of $\beta$ ($ % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/betaSOE.tex
+0.97 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/betaSOE.tex
  $) than would be expected given our calibrated return factor (${\mathscr{R}} = 1.015$), resulting in agents with wealth holdings around the median observed in the data.  This reflects the recent literature finding that for purposes of capturing aggregate consumption dynamics it may be more important to match the behavior of the typical consumer rather than the behavior of the typical holder of a dollar of wealth (see, for example, \cite{opLiquidH2M}).  Readers who prefer a calibration matching \textit{mean} observed wealth can consult the online appendix for a closed economy general equilibrium model, in which we show that the main results still hold.
 
 We calibrated the process for trend aggregate productivity growth $\Phi$ to match measured U.S.\ productivity data.  A Markov process with eleven states ranging between $-3.0$ percent and $+3.0$ percent (annual), and in which the state changes on average every two quarters, allowed us to fit both the high frequency autocorrelation evidence cited above and the low-frequency component of productivity growth obtained, e.g., by \cite{sswNAIRU}, Figure~1.9 and \cite{fernald:disappointingRecovery}, Figure~10.
 
-In our calibration, the variance of the idiosyncratic permanent innovations at the quarterly frequency is about 100 times the variance of the aggregate permanent innovations ($4 \times $0.00004 divided by $% start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/PermShkVarAnn.tex
-0.012 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/PermShkVarAnn.tex
+In our calibration, the variance of the idiosyncratic permanent innovations at the quarterly frequency is about 100 times the variance of the aggregate permanent innovations ($4 \times $0.00004 divided by $% start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/PermShkVarAnn.tex
+0.012 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/PermShkVarAnn.tex
  $).  This is a point worth emphasizing: Idiosyncratic uncertainty is {\it approximately two orders of magnitude larger} than aggregate uncertainty.  While reasonable people could differ a bit from our calibration of either the aggregate or idiosyncratic risk, no plausible calibration of either magnitude will change the fundamental point that the aggregate component of risk is tiny compared to the idiosyncratic component.  This is why assuming that people do not pay close attention to the macroeconomic environment is plausible: It makes a negligible contribution to the total uncertainty they face.
 
 \subsubsection{Small Aggregate Shocks and Consumption Concavity}
 A reader who is persuaded of the general importance of precautionary motives and other causes of nonlinearity in the microeconomic consumption function might feel uneasy about our assumption that consumers act in essentially a `certainty equivalent' way with respect to aggregate shocks.  The prior paragraph explains why the consequences of this assumption are negligible: Misperception of the level of aggregate productivity is so small that the consumption function is \textit{approximately} linear over the span between the level of consumption that would be correct with full knowledge, and the level of consumption that the consumer actually chooses.  The global concavity of the consumption function (and the curvature of marginal utility), which are important for many other purposes, are of little consequence for errors small enough not to interact meaningfully with that nonlinearity.  The importance of this insight has recently been emphasized by \cite{bmpMITshocks}, who show that assuming that behavior is linear with respect to aggregate shocks has huge benefits for computation of the solution to heterogeneous agent economies, at little cost to microeconomic realism.
 
-We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/UpdatePrb.tex
-0.25 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/Parameters/UpdatePrb.tex
+We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/UpdatePrb.tex
+0.25 % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Calibration/UpdatePrb.tex
  $ per quarter, for several reasons.  First, this is the parameter value assumed for the speed of expectations updating by \cite{mrSlumps} in their analysis of the consequences of sticky expectations for inflation.  They argue that an average frequency of updating of once a year is intuitively plausible.  Second, \cite{carroll:epidemicinflQJE} estimates an empirical process for the adjustment process for household inflation expectations in which the point estimate of the corresponding parameter is 0.27 for inflation expectations and 0.32 for unemployment expectations; the similarity of these figures suggests that the \cite{mrSlumps} calibration of 0.25 is a reasonable benchmark, and provides some insulation against the charge that the model is {\it ad hoc}: It is calibrated in a way that corresponds to estimates of the stickiness of expectations in a fundamentally different context.  Finally, empirical results presented below will also suggest a speed of updating for U.S.\ consumption dynamics of about 0.25 per quarter.
 
 \provideboolean{Slides} \setboolean{Slides}{false}  
@@ -530,7 +530,7 @@ We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Pa
 \\ $\sigma_{\Psi}^{2}$ & 0.00004 & Variance Aggregate Permanent Shocks 
 \\ \midrule  
 \multicolumn{3}{c}{ \textbf{Steady State of Perfect Foresight DSGE Model} } \  
-\\ \multicolumn{3}{c}{ $(\sigma_{\Psi}=\sigma_{\Theta}=\sigma_{\psi}=\sigma_{\theta}=\wp=\mathrm{D}=0$, $\Phi_t = 1)$} \  
+\\ \multicolumn{3}{c}{ $(\sigma_{\Psi}=\sigma_{\Theta}=\sigma_{\psi}=\sigma_{\theta}=\wp=\mathsf{D}=0$, $\Phi_t = 1)$} \  
 \\ ${K}/{K}^{\alpha}$ & 12.0 & SS Capital to Output Ratio  
 \\ ${K}$ & 48.55 & SS Capital to Labor Productivity Ratio ($=12^{1/(1-\alpha)}$) 
 \\ ${\mathsf{W}}$ &  2.59 & SS Wage Rate ($=(1-\alpha){K}^{\alpha}$) 
@@ -546,7 +546,7 @@ We calibrate the probability of updating at $\Pi= % start input /Volumes/Data/Pa
 \\ $\sigma_{\theta}^{2}$    & 0.120     & Variance Idiosyncratic Tran Shocks (=$4 \times$ Annual) 
 \\ $\sigma_{\psi}^{2}$      &0.003      & Variance Idiosyncratic Perm Shocks (=$\frac{1}{4} \times$ Annual) 
 \\ $\wp$                    & 0.050  & Probability of Unemployment Spell 
-\\ $\mathrm{D}$             & 0.005  & Probability of Mortality 
+\\ $\mathsf{D}$             & 0.005  & Probability of Mortality 
 \\ \bottomrule 
  \multicolumn{3}{p{0.95\textwidth}}{ \footnotesize \textbf{Note:} As discussed in online Appendix~\ref{app:Calibration}, we calibrate to the steady state values from a perfect foresight DGSE model.}
 \end{tabular}
@@ -577,7 +577,7 @@ shows that the relationship between the normalized asset stock $A_{t}$ and the e
   \label{eq:RandomWalkAForm}
   \Delta \log \mathbf{C}_{t+1} & = & \varsigma+\alpha A_{t}+\mu X_{t}+\epsilon_{t+1}.
 \end{eqnarray*}
-This reformulation is convenient because the literatures on precautionary saving and liquidity constraints since at least \cite{zeldes:jpe,zeldesStochastic} have argued that the effects of capital market imperfections can be captured by incorporating a lagged measure of resources like $A_{t}$ in consumption growth regressions.
+This reformulation is convenient because the literatures on precautionary saving and liquidity constraints since at least \cite{zeldes:jpe} and \citeyear{zeldesStochastic} have argued that the effects of capital market imperfections can be captured by incorporating a lagged measure of resources like $A_{t}$ in consumption growth regressions.
 
 \cite{cmModel} famously proposed a modification of this model in which a proportion $\eta$ of income goes to rule-of-thumb consumers who spend $C=Y$ in every period.  They argued that $\eta$ can be estimated by incorporating the predictable component of income growth as an additional regressor.  Finally, \cite{dynanHabits} and \cite{som07} show that in standard habit formation models, the size of the habit formation parameter can be captured by including lagged consumption growth as a regressor.  These considerations lead to a benchmark specification of the form:
 \begin{eqnarray}
@@ -742,7 +742,7 @@ The model predicts that the relationship between $\Ex_{t}[\Delta \log c_{t+1,i}]
 % start input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/CGrowCross.tex
  % end input /Volumes/Data/Papers/cAndCwithStickyE/cAndCwithStickyE-AEJM/Equations/CGrowCross.tex
  \begin{eqnarray*}
-\Delta \log       \mathbf{c} _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \mathbf{c} _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \mathbf{y} _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.
+\Delta \log       \mathbf{c} _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \mathbf{c} _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \mathbf{y} _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}
 \end{eqnarray*}
 
 \begin{minipage}{\TableWidth}
@@ -750,7 +750,7 @@ The model predicts that the relationship between $\Ex_{t}[\Delta \log c_{t+1,i}]
     \centering
     \caption{Micro Consumption Regression on Simulated Data} \label{table:CGrowCross}
     \begin{eqnarray*} 
-\Delta \log       \mathbf{c} _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \mathbf{c} _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \mathbf{y} _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}.   \\    \nonumber %\\CGrowCrossBar \nonumber 
+\Delta \log       \mathbf{c} _{t+1,i}  &=&  \varsigma + \chi \Delta \log      \mathbf{c} _{t,i} + \eta     {\Ex}_{t,i}[\Delta \log       \mathbf{y} _{t+1,i}]+ {\alpha} \bar{a}_{t,i}+\epsilon_{t+1,i}   \\    \nonumber %\\CGrowCrossBar \nonumber 
     \end{eqnarray*}
 \begin{tabular}{cd{4}d{4}d{5}ccc}  
 \toprule  
